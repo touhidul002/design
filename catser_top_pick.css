@@ -1,0 +1,315 @@
+   
+        .table-container {
+            width: 100%;
+            max-width: 800px; /* Prevent table from getting too wide */
+            margin: 0 auto; /* Center the container */
+            padding: 0 0 20px 0; /* Add bottom padding */
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin: 0; /* Remove margin, let container handle spacing */
+        }
+        
+        .comparison-table th {
+            background-color: #6161bb;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 20px 15px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .image-col {
+            width: 33%;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .product-col {
+            width: 22%;
+        }
+        
+        .details-col {
+            width: 22%;
+        }
+        
+        .price-col {
+            width: 23%;
+            text-align: center;
+            vertical-align: middle;
+            padding-right: 30px; /* Add right padding to match left */
+        }
+        
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .feature-icon {
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        
+        .check-price {
+            background: linear-gradient(135deg, #ff8a00 0%, #ffa726 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+        }
+        
+        .check-price::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .check-price:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 138, 0, 0.4);
+            background: linear-gradient(135deg, #f57c00 0%, #ff8a00 100%);
+        }
+        
+        .check-price:hover::before {
+            left: 100%;
+        }
+        
+        .check-price:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+        }
+        
+        /* ---------- Modern badge base style ---------- */
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            padding: 3px 4px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,.4);
+            box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,.25);
+        }
+
+        /* ---------- Badge color themes ---------- */
+        .best-overall {
+            background: linear-gradient(135deg, #3b8dff 0%, #00d2ff 100%);
+        }
+
+        .best-value {
+            background: linear-gradient(135deg, #1ecb6b 0%, #12a59f 100%);
+        }
+
+        .premium-choice {
+            background: linear-gradient(135deg, #9b59ff 0%, #ff3db4 100%);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: contain;
+            margin-left: 10px;
+        }
+
+        .comparison-table tbody td {
+            padding-top: 30px;
+        }
+        
+        /* Tablet styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 15px; /* Reduce body padding on tablets */
+            }
+            
+            .comparison-table {
+                font-size: 14px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+            
+            .badge {
+                font-size: 10px;
+                width: 180px; /* Slightly smaller badge */
+            }
+            
+            .check-price {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+            
+            .image-col {
+                padding-left: 20px; /* Reduce left padding */
+            }
+            
+            .price-col {
+                padding-right: 20px; /* Reduce right padding */
+            }
+        }
+        
+        /* Small tablet / large phone styles */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 10px; /* Further reduce body padding */
+            }
+            
+            .comparison-table th {
+                font-size: 16px;
+                padding: 15px 8px;
+            }
+            
+            .comparison-table td {
+                padding: 8px;
+            }
+            
+            .image-col {
+                padding-left: 15px;
+            }
+            
+            .price-col {
+                padding-right: 15px;
+            }
+            
+            .badge {
+                width: 150px;
+                font-size: 9px;
+            }
+        }
+
+        /* Mobile card layout */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 10px;
+            }
+            
+            .table-container {
+                padding: 0;
+            }
+            
+            /* Hide header */
+            .comparison-table thead {
+                display: none;
+            }
+
+            /* Stack everything vertically */
+            .comparison-table,
+            .comparison-table tbody,
+            .comparison-table tr,
+            .comparison-table td {
+                display: block;
+                width: 100%;
+            }
+
+            /* Each product row becomes a card */
+            .comparison-table tr {
+                margin-bottom: 20px;
+                border: 1px solid #e0e0e0;
+                border-radius: 10px;
+                padding: 15px;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+
+            /* Reset cell padding */
+            .comparison-table td {
+                padding: 8px 0;
+                border-bottom: none;
+            }
+
+            /* Badge no longer absolutely positioned */
+            .badge {
+                position: static;
+                display: inline-block;
+                margin: 0 auto 10px;
+                width: auto;
+                min-width: 120px;
+            }
+
+            /* Remove left padding from image column */
+            .image-col {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .product-image {
+                margin: 10px auto 0;
+                max-width: 80%;
+                margin-left: 0;
+            }
+
+            /* Center product name */
+            .product-col .product-name {
+                text-align: center;
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            /* Center features */
+            .details-col .feature {
+                justify-content: center;
+            }
+
+            /* Center price button and remove right padding */
+            .price-col {
+                text-align: center;
+                padding-right: 0;
+            }
+            
+            .check-price {
+                margin: 15px auto 0;
+                display: block;
+                width: fit-content;
+            }
+        }
