@@ -28,7 +28,7 @@
     font-size: 16px;
 }
 
-.rc-product-title {
+.rc-product-title h3{
     color: #1f2937;
     font-size: 20px;
     font-weight: 700;
@@ -37,7 +37,7 @@
 
 .rc-product-image {
     text-align: center;
-    padding: 30px 20px;
+    padding: 5px 20px;
     background: white;
 }
 
