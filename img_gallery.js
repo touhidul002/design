@@ -1,14 +1,12 @@
-function openModal(url, title, description) {
+function openModal(url, caption) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
+    const modalCaption = document.getElementById('modalCaption');
     
     modal.style.display = 'block';
     modalImg.src = url;
-    modalImg.alt = title;
-    modalTitle.textContent = title;
-    modalDescription.textContent = description;
+    modalImg.alt = caption;
+    modalCaption.textContent = caption;
 }
 
 function closeModal() {
