@@ -13,6 +13,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: white;
     margin: 0; /* Remove margin, let container handle spacing */
+    table-layout: fixed; /* Force fixed table layout to maintain column widths */
 }
 
 .tpc-comparison-table th {
@@ -29,6 +30,7 @@
     padding: 1px;
     border-bottom: 1px solid #eee;
     vertical-align: middle;
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
 .tpc-comparison-table tr:last-child td {
@@ -39,14 +41,17 @@
     width: 33%;
     position: relative;
     padding-left: 30px;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .tpc-product-col {
     width: 22%;
+    box-sizing: border-box;
 }
 
 .tpc-details-col {
     width: 22%;
+    box-sizing: border-box;
 }
 
 .tpc-price-col {
@@ -54,6 +59,7 @@
     text-align: center;
     vertical-align: middle;
     padding-right: 30px; /* Add right padding to match left */
+    box-sizing: border-box;
 }
 
 .tpc-product-name {
@@ -156,8 +162,11 @@
     width: 100%;
     height: auto;
     max-height: 150px;
+    max-width: 100%; /* Ensure image never exceeds container width */
     object-fit: contain;
     margin-left: 10px;
+    box-sizing: border-box;
+    display: block; /* Prevent inline spacing issues */
 }
 
 .tpc-comparison-table tbody td {
@@ -177,7 +186,8 @@
     
     .tpc-badge {
         font-size: 13px;
-        width: 180px; /* Slightly smaller badge */
+        width: 160px; /* Smaller badge for tablet */
+        max-width: calc(100% - 40px); /* Ensure badge fits within column */
     }
     
     .tpc-check-price {
@@ -186,11 +196,16 @@
     }
     
     .tpc-image-col {
-        padding-left: 20px; /* Reduce left padding */
+        padding-left: 15px; /* Reduce left padding */
     }
     
     .tpc-price-col {
-        padding-right: 20px; /* Reduce right padding */
+        padding-right: 15px; /* Reduce right padding */
+    }
+    
+    .tpc-product-image {
+        margin-left: 5px; /* Reduce left margin */
+        max-height: 120px; /* Smaller max height */
     }
 }
 
@@ -206,16 +221,23 @@
     }
     
     .tpc-image-col {
-        padding-left: 15px;
+        padding-left: 10px;
     }
     
     .tpc-price-col {
-        padding-right: 15px;
+        padding-right: 10px;
     }
     
     .tpc-badge {
-        width: 150px;
-        font-size: 12px;
+        width: 140px;
+        font-size: 11px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .tpc-product-image {
+        margin-left: 0;
+        max-height: 100px;
+        width: calc(100% - 10px); /* Account for any margin/padding */
     }
 }
 
@@ -253,6 +275,7 @@
     .tpc-comparison-table td {
         padding: 1px 0;
         border-bottom: none;
+        overflow: visible; /* Allow normal flow in mobile cards */
     }
 
     /* Badge no longer absolutely positioned */
@@ -262,17 +285,21 @@
         margin: 0 auto 10px;
         width: auto;
         min-width: 120px;
+        max-width: 100%;
     }
 
     /* Remove left padding from image column */
     .tpc-image-col {
         padding-left: 0;
         text-align: center;
+        width: 100%;
     }
 
     .tpc-product-image {
         margin: 10px auto 0;
-        max-width: 80%;
+        max-width: 200px; /* Fixed maximum width for mobile */
+        width: 100%;
+        max-height: 150px;
         margin-left: 0;
     }
 
@@ -281,22 +308,26 @@
         text-align: center;
         margin: 10px 0;
         font-size: 16px;
+        width: 100%;
     }
 
     /* Center features */
     .tpc-details-col .tpc-feature {
         justify-content: center;
+        width: 100%;
     }
 
     /* Center price button and remove right padding */
     .tpc-price-col {
         text-align: center;
         padding-right: 0;
+        width: 100%;
     }
     
     .tpc-check-price {
         margin: 15px auto 0;
         display: block;
         width: fit-content;
+        max-width: 100%;
     }
 }
