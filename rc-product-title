@@ -29,10 +29,10 @@
 }
 
 h3.rc-product-title {
-    color: #1f2937;
+    color: #1f4d8d;
     font-size: 22px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .rc-product-image {
@@ -157,7 +157,7 @@ h3.rc-product-title {
 .rc-pros-header {
     background: #16a34a;
     color: white;
-    padding: 12px 16px;
+    padding: 8px 16px;
     font-weight: 700;
     text-align: center;
 }
@@ -191,7 +191,7 @@ h3.rc-product-title {
 }
 
 .rc-pros-cons li {
-    padding: 12px 16px;
+    padding: 3px 16px 0px;
     display: flex;
     align-items: center;
     gap: 10px;
