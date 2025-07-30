@@ -24,7 +24,7 @@
 .col img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 .col .overlay {
@@ -66,6 +66,7 @@
     
     .col img {
         height: 200px;
+        object-fit: contain;
     }
     
     .gallery h1 {
@@ -95,23 +96,27 @@
     position: relative;
     margin: auto;
     padding: 20px;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    max-height: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    box-sizing: border-box;
 }
 .modal img {
+    width: 100%;
     max-width: 100%;
-    max-height: 70%;
+    max-height: 70vh;
     object-fit: contain;
+    object-position: center;
 }
 .modal-caption {
     color: white;
     text-align: center;
     margin-top: 20px;
+    max-width: 100%;
 }
 .modal-caption h3 {
     margin: 10px 0 5px 0;
@@ -138,4 +143,31 @@
 }
 .gallery img {
     cursor: pointer;
+}
+
+/* Additional responsive improvements for modal */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 10px;
+        max-width: 98%;
+        max-height: 98%;
+    }
+    
+    .modal img {
+        max-height: 60vh;
+    }
+    
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    .modal-caption h3 {
+        font-size: 1.2em;
+    }
+    
+    .modal-caption p {
+        font-size: 0.9em;
+    }
 }
