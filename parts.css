@@ -54,7 +54,7 @@
 
 .product-carousel-container .product-image {
     width: 200px;
-    height: 240px;
+    height: 280px;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0; /* removed margin */
     display: flex;
@@ -202,4 +202,5 @@
                 padding: 10px;
             }
         }
+
 
