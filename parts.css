@@ -47,11 +47,16 @@
             max-width: 200px;
         }
 
-        /* At 850px viewport, this will show approximately 4.2 products */
-        @media (min-width: 850px) {
+        /* Exactly 4 products per page at 800px+ */
+        @media (min-width: 800px) {
+            .product-carousel-container .products-grid {
+                max-width: calc(4 * 200px + 3 * 8px + 24px); /* 4 cards + 3 gaps + padding */
+            }
+            
             .product-carousel-container .product-card {
                 min-width: 200px;
                 max-width: 200px;
+                flex: 0 0 200px;
             }
         }
 
@@ -92,7 +97,7 @@
         }
 
         .product-carousel-container .product-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 6px;
@@ -100,7 +105,7 @@
         }
 
         .product-carousel-container .product-subtitle {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: #4a5568;
             margin-bottom: 8px;
