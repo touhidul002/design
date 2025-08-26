@@ -92,7 +92,7 @@
         }
 
         .product-carousel-container .product-title {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 6px;
@@ -100,7 +100,7 @@
         }
 
         .product-carousel-container .product-subtitle {
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 600;
             color: #4a5568;
             margin-bottom: 8px;
@@ -112,6 +112,11 @@
             line-height: 1.4;
             margin-bottom: 12px;
             flex-grow: 1;
+        }
+
+        .product-carousel-container ul li,
+        .product-carousel-container ol li {
+            font-size: 85%;
         }
 
         .product-carousel-container .price-section {
