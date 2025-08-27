@@ -136,7 +136,7 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 17px;
             transition: all 0.3s ease;
             box-shadow: 0 3px 12px rgba(255, 149, 0, 0.3);
         }
@@ -276,3 +276,4 @@
                 font-size: 14px;
             }
         }
+
