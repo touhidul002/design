@@ -1,4 +1,3 @@
-
 class ProductCarousel {
     constructor() {
         this.container = document.getElementById('productsGrid');
@@ -19,8 +18,13 @@ class ProductCarousel {
         const containerWidth = window.innerWidth;
         if (containerWidth < 480) return 1;
         if (containerWidth < 768) return 2;
-        if (containerWidth < 1200) return 3;
-        return 4;
+        if (containerWidth < 800) return 3; // Changed from 1200 to 800
+        return 4; // Always 4 at 800px and above
+    }
+
+    getCardWidth() {
+        // Match the CSS: 200px card width + 8px gap = 208px per card
+        return 208;
     }
 
     init() {
@@ -46,12 +50,16 @@ class ProductCarousel {
             dot.classList.toggle('active', index === this.currentIndex);
         });
 
+        // Properly disable buttons
+        this.prevBtn.disabled = this.currentIndex === 0;
+        this.nextBtn.disabled = this.currentIndex === this.totalPages - 1;
+        
         this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
         this.nextBtn.style.opacity = this.currentIndex === this.totalPages - 1 ? '0.5' : '1';
     }
 
     updateCarousel() {
-        const cardWidth = 292; // 280px width + 12px gap
+        const cardWidth = this.getCardWidth();
         const offset = this.currentIndex * this.cardsPerView * cardWidth;
         this.container.style.transform = `translateX(-${offset}px)`;
     }
@@ -80,16 +88,20 @@ class ProductCarousel {
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
 
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            const newCardsPerView = this.getCardsPerView();
-            if (newCardsPerView !== this.cardsPerView) {
-                this.cardsPerView = newCardsPerView;
-                this.totalPages = Math.ceil(this.cards.length / this.cardsPerView);
-                this.currentIndex = Math.min(this.currentIndex, this.totalPages - 1);
-                this.createDots();
-                this.updateNavigation();
-                this.updateCarousel();
-            }
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newCardsPerView = this.getCardsPerView();
+                if (newCardsPerView !== this.cardsPerView) {
+                    this.cardsPerView = newCardsPerView;
+                    this.totalPages = Math.ceil(this.cards.length / this.cardsPerView);
+                    this.currentIndex = Math.min(this.currentIndex, this.totalPages - 1);
+                    this.createDots();
+                    this.updateNavigation();
+                    this.updateCarousel();
+                }
+            }, 100); // Debounce resize events
         });
 
         // Touch/swipe support
@@ -100,12 +112,12 @@ class ProductCarousel {
         this.container.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             isDragging = true;
-        });
+        }, { passive: true });
 
         this.container.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             currentX = e.touches[0].clientX;
-        });
+        }, { passive: true });
 
         this.container.addEventListener('touchend', () => {
             if (!isDragging) return;
