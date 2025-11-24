@@ -1,279 +1,325 @@
+/* --- BASE STYLES (PC/Default) --- */
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .product-carousel-container {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: transparent;
-            overflow-x: hidden;
-        }
+.product-carousel-container {
+    font-family: Arial, sans-serif; /* Changed to standard web font to match Amazon style closer */
+    background-color: transparent;
+    overflow-x: hidden;
+}
 
-        .product-carousel-container .container {
-            width: 100%;
-            position: relative;
-        }
+.product-carousel-container .container {
+    width: 100%;
+    position: relative;
+}
 
-        .product-carousel-container .products-wrapper {
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+/* PC View: Horizontal Scroll Setup */
+.product-carousel-container .products-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-        .product-carousel-container .products-wrapper::-webkit-scrollbar {
-            display: none;
-        }
+.product-carousel-container .products-wrapper::-webkit-scrollbar {
+    display: none;
+}
 
-        .product-carousel-container .products-grid {
-            display: flex;
-            gap: 8px;
-            padding: 12px;
-            min-width: max-content;
-            transition: transform 0.3s ease;
-        }
+.product-carousel-container .products-grid {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    min-width: max-content;
+    transition: transform 0.3s ease;
+    /* Initialize counter for Mobile view usage */
+    counter-reset: product-rank; 
+}
 
-        .product-carousel-container .product-card {
-            background: white;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-width: 200px;
-            max-width: 200px;
-        }
+.product-carousel-container .product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 200px;
+    /* Counter increment for Mobile view */
+    counter-increment: product-rank;
+}
 
-        /* Exactly 4 products per page at 800px+ */
-        @media (min-width: 800px) {
-            .product-carousel-container .products-grid {
-                max-width: calc(4 * 200px + 3 * 8px + 24px); /* 4 cards + 3 gaps + padding */
-            }
-            
-            .product-carousel-container .product-card {
-                min-width: 200px;
-                max-width: 200px;
-                flex: 0 0 200px;
-            }
-        }
+/* Exactly 4 products per page at 800px+ */
+@media (min-width: 800px) {
+    .product-carousel-container .products-grid {
+        max-width: calc(4 * 200px + 3 * 8px + 24px);
+    }
+    
+    .product-carousel-container .product-card {
+        min-width: 200px;
+        max-width: 200px;
+        flex: 0 0 200px;
+    }
+}
 
-        .product-carousel-container .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
+/* Hover effects for PC */
+@media (min-width: 769px) {
+    .product-carousel-container .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+    .product-carousel-container .product-card:hover .product-image img {
+        transform: scale(1.05);
+    }
+}
 
-        .product-carousel-container .product-image {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 0;
-            margin-bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
+.product-carousel-container .product-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        .product-carousel-container .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+.product-carousel-container .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 
-        .product-carousel-container .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
+.product-carousel-container .product-content {
+    padding: 16px 12px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-        .product-carousel-container .product-content {
-            padding: 16px 12px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.product-carousel-container .product-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
 
-        .product-carousel-container .product-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 6px;
-            line-height: 1.3;
-        }
+.product-carousel-container .product-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
 
-        .product-carousel-container .product-subtitle {
-            font-size: 14px;
-            font-weight: 600;
-            color: #4a5568;
-            margin-bottom: 8px;
-        }
+.product-carousel-container .product-description,
+.product-carousel-container .product-features {
+    font-size: 11px;
+    color: #718096;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
 
-        .product-carousel-container .product-description {
-            font-size: 11px;
-            color: #718096;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            flex-grow: 1;
-        }
+.product-carousel-container ul li {
+    font-size: 85%;
+    list-style-position: inside;
+}
 
-        .product-carousel-container ul li,
-        .product-carousel-container ol li {
-            font-size: 85%;
-        }
+.product-carousel-container .price-section {
+    margin-top: auto;
+}
 
-        .product-carousel-container .price-section {
-            margin-top: auto;
-        }
+/* Default Button Style (PC) */
+.product-carousel-container .amazon-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(255, 149, 0, 0.3);
+    text-align: center;
+}
 
-        .product-carousel-container .amazon-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 17px;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 12px rgba(255, 149, 0, 0.3);
-        }
+.product-carousel-container .amazon-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 149, 0, 0.4);
+    background: linear-gradient(135deg, #ff6b35 0%, #ff9500 100%);
+}
 
-        .product-carousel-container .amazon-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(255, 149, 0, 0.4);
-            background: linear-gradient(135deg, #ff6b35 0%, #ff9500 100%);
-        }
+/* Navigation Arrows (PC) */
+.product-carousel-container .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+}
 
-        .product-carousel-container .navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-        }
+.product-carousel-container .nav-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+}
 
-        .product-carousel-container .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+/* --- MOBILE TRANSFORMATION (Matches Reference Image) --- */
 
-        .product-carousel-container .nav-dot.active {
-            background: #667eea;
-            transform: scale(1.3);
-        }
+@media (max-width: 768px) {
+    /* 1. Layout Structure: Vertical List instead of Carousel */
+    .product-carousel-container .products-wrapper {
+        overflow: visible;
+    }
 
-        .product-carousel-container .nav-arrow {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 18px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
+    .product-carousel-container .products-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Space between distinct products */
+        padding: 10px;
+        min-width: 100%;
+    }
 
-        .product-carousel-container .nav-arrow:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        }
+    /* 2. Hide Carousel Navigation */
+    .product-carousel-container .navigation {
+        display: none;
+    }
 
-        .product-carousel-container .nav-arrow:active {
-            transform: scale(0.95);
-        }
+    /* 3. Card Styling: Bordered Box with specific look */
+    .product-carousel-container .product-card {
+        min-width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border: 1px solid #e7e7e7; /* Light grey border */
+        border-radius: 0; /* Sharp or very slight corners */
+        margin: 0;
+        flex: 1 1 auto;
+        display: block; /* Reset flex layout of card */
+    }
 
-        .product-carousel-container .nav-arrow:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            background: #e2e8f0;
-            color: #a0aec0;
-            box-shadow: none;
-            transform: none;
-        }
+    /* 4. The "Bestseller No. X" Header */
+    .product-carousel-container .product-card::before {
+        content: "Bestseller No. " counter(product-rank);
+        display: block;
+        background-color: #ffffff;
+        color: #0f1111;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #e7e7e7; /* Separator line */
+    }
 
-        .product-carousel-container .nav-arrow:disabled:hover {
-            transform: none;
-            box-shadow: none;
-        }
+    /* 5. Image Styling */
+    .product-carousel-container .product-image {
+        background: #fff; /* White background */
+        height: auto; /* Let image dictate height */
+        padding: 20px;
+        border-radius: 0;
+        display: block;
+    }
 
-        /* Enhanced arrow icons */
-        .product-carousel-container .nav-arrow::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
+    .product-carousel-container .product-image img {
+        max-width: 100%;
+        max-height: 200px; /* Restrict height */
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        transition: none; /* Remove hover zoom */
+    }
+    
+    .product-carousel-container .product-card:hover .product-image img {
+        transform: none;
+    }
 
-        .product-carousel-container .nav-arrow.prev::before {
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-            border-right: 8px solid currentColor;
-            margin-right: 2px;
-        }
+    /* 6. Content Area styling */
+    .product-carousel-container .product-content {
+        padding: 10px 15px;
+        text-align: center;
+        background: #fff;
+    }
 
-        .product-carousel-container .nav-arrow.next::before {
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-            border-left: 8px solid currentColor;
-            margin-left: 2px;
-        }
+    /* 7. Product Title: Blue Link Look */
+    .product-carousel-container .product-title {
+        color: #007185; /* Amazon Link Blue */
+        font-size: 15px;
+        font-weight: 400; /* Not bold */
+        text-decoration: underline;
+        margin-bottom: 15px;
+        display: block;
+        line-height: 1.4;
+        min-height: auto;
+    }
 
-        @media (max-width: 768px) {
-            .product-carousel-container .product-card {
-                min-width: 180px;
-                max-width: 180px;
-            }
-            
-            .product-carousel-container .product-content {
-                padding: 14px 10px;
-            }
-            
-            .product-carousel-container .products-grid {
-                gap: 6px;
-                padding: 10px;
-            }
+    /* 8. Hide Elements not in reference image */
+    .product-carousel-container .product-subtitle,
+    .product-carousel-container .product-features {
+        display: none;
+    }
 
-            .product-carousel-container .product-image {
-                height: 160px;
-            }
-        }
+    /* 9. Button Area: Separator Line & Background */
+    .product-carousel-container .price-section {
+        border-top: 1px solid #f0f0f0;
+        padding: 12px 0 5px 0;
+        margin-top: 5px;
+        background: #fbfbfb; /* Slight grey tint area for button */
+    }
 
-        @media (max-width: 480px) {
-            .product-carousel-container .product-card {
-                min-width: 160px;
-                max-width: 160px;
-            }
-            
-            .product-carousel-container .products-grid {
-                gap: 5px;
-                padding: 8px;
-            }
+    /* 10. Yellow Button Styling */
+    .product-carousel-container .amazon-link {
+        background: #f0c14b; /* Amazon Yellow */
+        background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+        border: 1px solid #a88734;
+        box-shadow: 0 1px 0 rgba(255,255,255,.4) inset;
+        border-radius: 3px;
+        color: #111;
+        font-size: 0; /* Hide original text "See on Amazon" */
+        padding: 8px 15px;
+        width: auto;
+        min-width: 180px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            .product-carousel-container .product-image {
-                height: 140px;
-            }
+    .product-carousel-container .amazon-link:hover {
+        background: linear-gradient(to bottom,#f5d78e,#eeb933);
+        transform: none;
+        box-shadow: none;
+    }
 
-            .product-carousel-container .product-content {
-                padding: 12px 8px;
-            }
+    /* Add Cart Icon */
+    .product-carousel-container .amazon-link::before {
+        content: "\1F6D2"; /* Unicode Shopping Cart */
+        font-size: 16px;
+        margin-right: 8px;
+        color: #111;
+    }
 
-            .product-carousel-container .nav-arrow {
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
-            }
-        }
-
+    /* Replace Text with "Buy on Amazon" */
+    .product-carousel-container .amazon-link::after {
+        content: "Buy on Amazon";
+        font-size: 13px;
+        font-weight: 400;
+        color: #111;
+    }
+}
