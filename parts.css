@@ -110,10 +110,10 @@
 }
 
 .product-carousel-container .product-features {
-    font-size: 11px;
+    font-size: 14px;
     color: #718096;
     line-height: 1.4;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     flex-grow: 1;
 }
 
@@ -299,3 +299,4 @@
         font-weight: 400;
     }
 }
+
