@@ -1,4 +1,4 @@
-/* --- BASE STYLES (PC/Default) --- */
+/* --- BASE STYLES (PC/Default - No Changes) --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 .product-carousel-container {
-    font-family: Arial, sans-serif; /* Changed to standard web font to match Amazon style closer */
+    font-family: Arial, sans-serif;
     background-color: transparent;
     overflow-x: hidden;
 }
@@ -16,7 +16,6 @@
     position: relative;
 }
 
-/* PC View: Horizontal Scroll Setup */
 .product-carousel-container .products-wrapper {
     overflow-x: auto;
     scrollbar-width: none;
@@ -33,8 +32,6 @@
     padding: 12px;
     min-width: max-content;
     transition: transform 0.3s ease;
-    /* Initialize counter for Mobile view usage */
-    counter-reset: product-rank; 
 }
 
 .product-carousel-container .product-card {
@@ -49,16 +46,12 @@
     flex-direction: column;
     min-width: 200px;
     max-width: 200px;
-    /* Counter increment for Mobile view */
-    counter-increment: product-rank;
 }
 
-/* Exactly 4 products per page at 800px+ */
 @media (min-width: 800px) {
     .product-carousel-container .products-grid {
         max-width: calc(4 * 200px + 3 * 8px + 24px);
     }
-    
     .product-carousel-container .product-card {
         min-width: 200px;
         max-width: 200px;
@@ -66,7 +59,6 @@
     }
 }
 
-/* Hover effects for PC */
 @media (min-width: 769px) {
     .product-carousel-container .product-card:hover {
         transform: translateY(-4px);
@@ -81,8 +73,6 @@
     width: 100%;
     height: 180px;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 0;
-    margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,7 +109,6 @@
     margin-bottom: 8px;
 }
 
-.product-carousel-container .product-description,
 .product-carousel-container .product-features {
     font-size: 11px;
     color: #718096;
@@ -137,7 +126,6 @@
     margin-top: auto;
 }
 
-/* Default Button Style (PC) */
 .product-carousel-container .amazon-link {
     display: inline-block;
     background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
@@ -158,7 +146,6 @@
     background: linear-gradient(135deg, #ff6b35 0%, #ff9500 100%);
 }
 
-/* Navigation Arrows (PC) */
 .product-carousel-container .navigation {
     display: flex;
     justify-content: center;
@@ -181,145 +168,134 @@
     user-select: none;
 }
 
-/* --- MOBILE TRANSFORMATION (Matches Reference Image) --- */
+/* --- MOBILE UPDATES (Fixed List View) --- */
 
 @media (max-width: 768px) {
-    /* 1. Layout Structure: Vertical List instead of Carousel */
+    /* 1. Stop Sliding & Force Vertical Layout */
     .product-carousel-container .products-wrapper {
         overflow: visible;
     }
 
     .product-carousel-container .products-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px; /* Space between distinct products */
+        display: block !important; /* Forces vertical stacking */
+        transform: none !important; /* CRITICAL: Stops JS from sliding items away */
+        width: 100% !important; /* Ensures it stays full width */
         padding: 10px;
-        min-width: 100%;
+        min-width: 0;
+        margin: 0;
     }
 
-    /* 2. Hide Carousel Navigation */
+    /* 2. Hide Navigation Controls */
     .product-carousel-container .navigation {
         display: none;
     }
 
-    /* 3. Card Styling: Bordered Box with specific look */
+    /* 3. Card Styling: Box with border */
     .product-carousel-container .product-card {
+        display: flex;
+        flex-direction: column;
         min-width: 100%;
         max-width: 100%;
         box-shadow: none;
-        border: 1px solid #e7e7e7; /* Light grey border */
-        border-radius: 0; /* Sharp or very slight corners */
-        margin: 0;
-        flex: 1 1 auto;
-        display: block; /* Reset flex layout of card */
+        border: 1px solid #e7e7e7;
+        border-radius: 0;
+        margin-bottom: 20px; /* Space between products */
     }
 
-    /* 4. The "Bestseller No. X" Header */
-    .product-carousel-container .product-card::before {
-        content: "Bestseller No. " counter(product-rank);
+    /* 4. Magic: Reorder elements to put Subtitle on Top */
+    /* We use display: contents to 'unbox' the container so we can reorder children */
+    .product-carousel-container .product-content {
+        display: contents; 
+    }
+
+    /* The Header (Subtitle from HTML) */
+    .product-carousel-container .product-subtitle {
         display: block;
+        order: -1; /* Moves to very top */
         background-color: #ffffff;
         color: #0f1111;
         font-weight: 700;
         font-size: 14px;
         padding: 10px;
         text-align: center;
-        border-bottom: 1px solid #e7e7e7; /* Separator line */
+        border-bottom: 1px solid #e7e7e7;
+        width: 100%;
+        margin: 0;
     }
 
-    /* 5. Image Styling */
+    /* Image Order */
     .product-carousel-container .product-image {
-        background: #fff; /* White background */
-        height: auto; /* Let image dictate height */
+        order: 0;
+        background: #fff;
+        height: auto;
         padding: 20px;
         border-radius: 0;
-        display: block;
     }
 
     .product-carousel-container .product-image img {
         max-width: 100%;
-        max-height: 200px; /* Restrict height */
+        max-height: 200px;
         width: auto;
         display: block;
         margin: 0 auto;
         object-fit: contain;
-        transition: none; /* Remove hover zoom */
-    }
-    
-    .product-carousel-container .product-card:hover .product-image img {
-        transform: none;
     }
 
-    /* 6. Content Area styling */
-    .product-carousel-container .product-content {
+    /* Title Styling (Amazon Link Blue) */
+    .product-carousel-container .product-title {
+        order: 1;
+        color: #007185;
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: underline;
+        margin: 0;
         padding: 10px 15px;
         text-align: center;
+        width: 100%;
         background: #fff;
     }
 
-    /* 7. Product Title: Blue Link Look */
-    .product-carousel-container .product-title {
-        color: #007185; /* Amazon Link Blue */
-        font-size: 15px;
-        font-weight: 400; /* Not bold */
-        text-decoration: underline;
-        margin-bottom: 15px;
-        display: block;
-        line-height: 1.4;
-        min-height: auto;
-    }
-
-    /* 8. Hide Elements not in reference image */
-    .product-carousel-container .product-subtitle,
+    /* Hide Features List */
     .product-carousel-container .product-features {
         display: none;
     }
 
-    /* 9. Button Area: Separator Line & Background */
+    /* Button Section Styling */
     .product-carousel-container .price-section {
+        order: 2;
         border-top: 1px solid #f0f0f0;
-        padding: 12px 0 5px 0;
-        margin-top: 5px;
-        background: #fbfbfb; /* Slight grey tint area for button */
+        padding: 12px 15px;
+        background: #fbfbfb;
+        width: 100%;
+        text-align: center;
     }
 
-    /* 10. Yellow Button Styling */
+    /* Amazon Yellow Button */
     .product-carousel-container .amazon-link {
-        background: #f0c14b; /* Amazon Yellow */
+        background: #f0c14b;
         background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
         border: 1px solid #a88734;
         box-shadow: 0 1px 0 rgba(255,255,255,.4) inset;
         border-radius: 3px;
         color: #111;
-        font-size: 0; /* Hide original text "See on Amazon" */
+        font-size: 0; /* Hide original text */
         padding: 8px 15px;
         width: auto;
-        min-width: 180px;
+        min-width: 200px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
 
-    .product-carousel-container .amazon-link:hover {
-        background: linear-gradient(to bottom,#f5d78e,#eeb933);
-        transform: none;
-        box-shadow: none;
-    }
-
-    /* Add Cart Icon */
     .product-carousel-container .amazon-link::before {
-        content: "\1F6D2"; /* Unicode Shopping Cart */
+        content: "\1F6D2"; /* Cart Icon */
         font-size: 16px;
         margin-right: 8px;
-        color: #111;
     }
 
-    /* Replace Text with "Buy on Amazon" */
     .product-carousel-container .amazon-link::after {
-        content: "Buy on Amazon";
+        content: "Buy on Amazon"; /* New Text */
         font-size: 13px;
         font-weight: 400;
-        color: #111;
     }
 }
