@@ -247,7 +247,6 @@
         color: #007185;
         font-size: 15px;
         font-weight: 400;
-        text-decoration: underline;
         margin: 0;
         padding: 10px 15px;
         text-align: center;
@@ -299,5 +298,6 @@
         font-weight: 400;
     }
 }
+
 
 
