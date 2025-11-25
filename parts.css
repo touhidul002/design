@@ -50,12 +50,12 @@
 
 @media (min-width: 800px) {
     .product-carousel-container .products-grid {
-        max-width: calc(4 * 200px + 3 * 8px + 24px);
+        max-width: calc(4 * 250px + 3 * 8px + 24px);
     }
     .product-carousel-container .product-card {
-        min-width: 200px;
-        max-width: 200px;
-        flex: 0 0 200px;
+        min-width: 250px;
+        max-width: 250px;
+        flex: 0 0 250px;
     }
 }
 
@@ -298,6 +298,7 @@
         font-weight: 400;
     }
 }
+
 
 
 
