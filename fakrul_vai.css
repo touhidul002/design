@@ -1,0 +1,214 @@
+        /* --- General Resets & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 4px;
+}
+
+/* --- Header Section --- */
+.page-header {
+    background-color: #fff5f0; /* Light peach/white bg */
+    padding: 20px;
+    border-left: 5px solid #5a2d2d; /* Dark brown accent */
+    border-bottom: 1px solid #eee;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    color: #111;
+    font-weight: 700;
+}
+
+/* --- Common Amazon Button Style --- */
+.amazon-btn {
+    display: inline-block;
+    background: #f0c14b;
+    border: 1px solid #a88734;
+    border-radius: 3px;
+    color: #111;
+    padding: 8px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+}
+
+.amazon-btn:hover {
+    background: #e5b440;
+}
+
+.amazon-btn i {
+    margin-right: 5px;
+}
+
+/* =========================================
+   PC VIEW (Desktop) - Table Layout
+   ========================================= */
+   
+/* Hide mobile specific label by default */
+.mobile-label {
+    display: none;
+}
+
+/* The Table Header Row */
+.list-header {
+    display: grid;
+    grid-template-columns: 60px 120px 1fr 180px;
+    padding: 15px 10px;
+    background-color: #fafafa;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+/* The Product Rows */
+.product-card {
+    display: grid;
+    grid-template-columns: 60px 120px 1fr 180px;
+    align-items: center; /* Vertically center items */
+    padding: 20px 10px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.product-card:hover {
+    background-color: #fdfdfd;
+}
+
+.product-card:last-child {
+    border-bottom: none;
+}
+
+/* Column Styles */
+.rank-badge {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.preview-img img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.product-info {
+    padding: 0 20px;
+}
+
+.product-title {
+    color: #007185; /* Amazon Link Blue */
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.product-title:hover {
+    color: #c7511f; /* Amazon Hover Orange */
+    text-decoration: underline;
+}
+
+.action-btn {
+    text-align: center;
+}
+
+/* =========================================
+   MOBILE VIEW - Card Layout
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Hide the table header row */
+    .list-header {
+        display: none;
+    }
+
+    /* Change grid to flex column for stacking */
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px 15px;
+        border-bottom: 10px solid #f4f4f4; /* Thick spacer between cards */
+    }
+
+    /* 1. The Rank ("Bestseller No. 1") */
+    .rank-badge {
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #1d2733;
+    }
+
+    .mobile-label {
+        display: inline; /* Show "Bestseller No." text */
+    }
+
+    /* 2. The Image */
+    .preview-img {
+        margin-bottom: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .preview-img img {
+        max-width: 250px; /* Make image much larger */
+    }
+
+    /* 3. The Title */
+    .product-info {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .product-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #007185;
+    }
+
+    /* 4. The Button */
+    .action-btn {
+        width: 100%;
+    }
+
+    .amazon-btn {
+        width: 100%; /* Full width button */
+        padding: 12px;
+        font-size: 15px;
+        background: #ffd814; /* Slightly brighter yellow for mobile usually */
+        border-color: #fcd200;
+    }
+    
+    /* Adjust Page Header */
+    .page-header h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+}
