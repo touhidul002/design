@@ -100,9 +100,9 @@ a {
 
 /* Column Styles */
 .rank-badge {
-    font-weight: normal; /* Changed from bold to match product title */
-    font-size: 15px; /* Same as product title */
-    color: #111; /* Deep black */
+    font-weight: bold; /* Changed back to bold */
+    font-size: 16px; /* Increased by 1px */
+    color: #333; /* Default text color */
     text-align: left; /* Changed from center to left for better text alignment */
     padding-right: 15px; /* Added padding for breathing room */
     line-height: 1.4; /* Same as product title */
@@ -121,9 +121,10 @@ a {
 }
 
 .product-title {
-    color: #111; /* Deep black */
-    font-size: 15px;
+    color: #333; /* Default text color */
+    font-size: 16px; /* Increased by 1px */
     line-height: 1.4;
+    font-weight: bold; /* Added bold */
 }
 
 .product-title:hover {
