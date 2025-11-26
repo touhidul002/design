@@ -83,7 +83,7 @@ a {
 /* The Product Rows */
 .product-card {
     display: grid;
-    grid-template-columns: 200px 120px 1fr 180px; /* Changed from 60px to 200px */
+    grid-template-columns: 250px 120px 1fr 180px; /* Changed from 60px to 200px */
     align-items: center; /* Vertically center items */
     padding: 20px 10px;
     border-bottom: 1px solid #eee;
