@@ -252,7 +252,7 @@ th {
   text-align: left;
   padding: 16px 20px;
   border: 1px solid #34495e;
-  min-width: 220px;
+  min-width: 250px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -261,7 +261,7 @@ th {
 /* First column - Product name needs more space */
 th:first-child,
 td:first-child {
-  min-width: 280px;
+  min-width: 320px;
   position: sticky;
   left: 0;
   background-color: inherit;
@@ -277,9 +277,10 @@ td {
   padding: 14px 20px;
   border: 1px solid #ddd;
   vertical-align: top;
-  min-width: 220px;
+  min-width: 250px;
   white-space: normal;
   word-wrap: break-word;
+  line-height: 1.6;
 }
 
 /* Alternating row colors */
@@ -319,39 +320,39 @@ table::-webkit-scrollbar-thumb:hover {
 /* Responsive adjustments - Keep columns wide, force scrolling */
 @media screen and (max-width: 1024px) {
   th, td {
-    min-width: 200px;
+    min-width: 250px;
     padding: 14px 18px;
     font-size: 15px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 260px;
+    min-width: 320px;
   }
 }
 
 @media screen and (max-width: 768px) {
   th, td {
-    min-width: 200px;
+    min-width: 240px;
     padding: 14px 18px;
     font-size: 15px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 240px;
+    min-width: 300px;
   }
 }
 
 @media screen and (max-width: 480px) {
   th, td {
-    min-width: 180px;
+    min-width: 220px;
     padding: 12px 16px;
     font-size: 14px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 220px;
+    min-width: 280px;
   }
 }
