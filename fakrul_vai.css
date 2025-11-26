@@ -72,7 +72,7 @@ a {
 /* The Table Header Row */
 .list-header {
     display: grid;
-    grid-template-columns: 200px 120px 1fr 180px; /* Changed from 60px to 200px */
+    grid-template-columns: 250px 120px 1fr 180px; /* Changed to 250px */
     padding: 15px 10px;
     background-color: #fafafa;
     font-weight: bold;
@@ -83,7 +83,7 @@ a {
 /* The Product Rows */
 .product-card {
     display: grid;
-    grid-template-columns: 200px 120px 1fr 180px; /* Changed from 60px to 200px */
+    grid-template-columns: 250px 120px 1fr 180px; /* Changed to 250px */
     align-items: center; /* Vertically center items */
     padding: 20px 10px;
     border-bottom: 1px solid #eee;
@@ -100,12 +100,12 @@ a {
 
 /* Column Styles */
 .rank-badge {
-    font-weight: bold;
-    font-size: 14px; /* Reduced slightly for longer text */
-    color: #333;
+    font-weight: normal; /* Changed from bold to match product title */
+    font-size: 15px; /* Same as product title */
+    color: #111; /* Deep black */
     text-align: left; /* Changed from center to left for better text alignment */
     padding-right: 15px; /* Added padding for breathing room */
-    line-height: 1.3; /* Better line height for multi-line text */
+    line-height: 1.4; /* Same as product title */
 }
 
 .preview-img img {
@@ -121,7 +121,7 @@ a {
 }
 
 .product-title {
-    color: #007185; /* Amazon Link Blue */
+    color: #111; /* Deep black */
     font-size: 15px;
     line-height: 1.4;
 }
