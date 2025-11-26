@@ -219,29 +219,28 @@ a {
 /* =========================================
    EEEEEEEEEENNNNDDDDDDDD
    ========================================= */
-/* Table with built-in scrolling */
+/* Table wrapper - this makes scrolling work */
 table {
   width: 100%;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto;
-  white-space: nowrap;
+  display: block;
   -webkit-overflow-scrolling: touch;
   background-color: white;
 }
 
-/* Table head */
-thead {
+/* Keep table structure intact */
+thead, tbody {
   display: table;
   width: 100%;
-  table-layout: fixed;
 }
 
-/* Table body */
-tbody {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
+tr {
+  display: table-row;
+}
+
+th, td {
+  display: table-cell;
 }
 
 /* Table headers */
@@ -252,24 +251,8 @@ th {
   text-align: left;
   padding: 16px 20px;
   border: 1px solid #34495e;
-  min-width: 250px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-/* First column - Product name needs more space */
-th:first-child,
-td:first-child {
-  min-width: 320px;
-  position: sticky;
-  left: 0;
-  background-color: inherit;
-  z-index: 5;
-}
-
-th:first-child {
-  z-index: 15;
+  min-width: 200px;
+  white-space: nowrap;
 }
 
 /* Table cells */
@@ -277,7 +260,7 @@ td {
   padding: 14px 20px;
   border: 1px solid #ddd;
   vertical-align: top;
-  min-width: 250px;
+  min-width: 200px;
   white-space: normal;
   word-wrap: break-word;
   line-height: 1.6;
@@ -317,42 +300,19 @@ table::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-/* Responsive adjustments - Keep columns wide, force scrolling */
-@media screen and (max-width: 1024px) {
-  th, td {
-    min-width: 250px;
-    padding: 14px 18px;
-    font-size: 15px;
-  }
-  
-  th:first-child,
-  td:first-child {
-    min-width: 320px;
-  }
-}
-
+/* Mobile - keep columns readable, allow scrolling */
 @media screen and (max-width: 768px) {
   th, td {
-    min-width: 240px;
-    padding: 14px 18px;
-    font-size: 15px;
-  }
-  
-  th:first-child,
-  td:first-child {
-    min-width: 300px;
+    min-width: 180px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 480px) {
   th, td {
-    min-width: 220px;
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-  
-  th:first-child,
-  td:first-child {
-    min-width: 280px;
+    min-width: 160px;
+    padding: 10px 14px;
+    font-size: 13px;
   }
 }
