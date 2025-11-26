@@ -317,7 +317,7 @@ table::-webkit-scrollbar-thumb:hover {
 /* Responsive adjustments - Keep columns wide, force scrolling */
 @media screen and (max-width: 1024px) {
   th, td {
-    min-width: 160px;
+    min-width: 180px;
     padding: 10px 14px;
     font-size: 14px;
   }
@@ -330,8 +330,8 @@ table::-webkit-scrollbar-thumb:hover {
 
 @media screen and (max-width: 768px) {
   th, td {
-    min-width: 150px;
-    padding: 10px 12px;
+    min-width: 180px;
+    padding: 5px 5px;
     font-size: 14px;
   }
   
@@ -343,8 +343,8 @@ table::-webkit-scrollbar-thumb:hover {
 
 @media screen and (max-width: 480px) {
   th, td {
-    min-width: 140px;
-    padding: 10px 12px;
+    min-width: 160px;
+    padding: 5px 5px;
     font-size: 13px;
   }
   
