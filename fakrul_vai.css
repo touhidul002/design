@@ -217,20 +217,33 @@ a {
     }
 }
 
-/* Container for horizontal scrolling */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  margin: 20px 0;
-}
 
-/* Base table styles */
+
+/* Direct table styling - no wrapper needed */
 table {
   width: 100%;
-  min-width: 800px; /* Minimum width before scrolling kicks in */
   border-collapse: collapse;
   background-color: white;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+/* Table head and body need to be table display */
+thead, tbody {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Reset for proper display */
+thead {
+  width: calc(100% - 0px);
+}
+
+tbody {
+  width: 100%;
 }
 
 /* Table headers */
@@ -241,7 +254,8 @@ th {
   text-align: left;
   padding: 12px 15px;
   border: 1px solid #ddd;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 /* Table cells */
@@ -249,7 +263,18 @@ td {
   padding: 12px 15px;
   border: 1px solid #ddd;
   vertical-align: top;
+  white-space: normal;
+  word-wrap: break-word;
 }
+
+/* Column widths */
+th:nth-child(1), td:nth-child(1) { width: 15%; min-width: 150px; }
+th:nth-child(2), td:nth-child(2) { width: 12%; min-width: 120px; }
+th:nth-child(3), td:nth-child(3) { width: 13%; min-width: 130px; }
+th:nth-child(4), td:nth-child(4) { width: 18%; min-width: 180px; }
+th:nth-child(5), td:nth-child(5) { width: 15%; min-width: 150px; }
+th:nth-child(6), td:nth-child(6) { width: 15%; min-width: 150px; }
+th:nth-child(7), td:nth-child(7) { width: 12%; min-width: 120px; }
 
 /* Alternating row colors */
 tbody tr:nth-child(even) {
@@ -262,13 +287,20 @@ tbody tr:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
   table {
-    min-width: 600px;
     font-size: 14px;
   }
-  
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 13px;
+  }
   th, td {
     padding: 8px 10px;
   }
@@ -276,30 +308,29 @@ tbody tr:hover {
 
 @media screen and (max-width: 480px) {
   table {
-    min-width: 500px;
     font-size: 12px;
   }
-  
   th, td {
     padding: 6px 8px;
   }
 }
 
-/* Scrollbar styling for better UX */
-.table-container::-webkit-scrollbar {
-  height: 8px;
+/* Scrollbar styling */
+table::-webkit-scrollbar {
+  height: 10px;
 }
 
-.table-container::-webkit-scrollbar-track {
+table::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.table-container::-webkit-scrollbar-thumb {
+table::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.table-container::-webkit-scrollbar-thumb:hover {
+table::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
