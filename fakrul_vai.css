@@ -216,7 +216,9 @@ a {
         text-align: center;
     }
 }
-
+/* =========================================
+   EEEEEEEEEENNNNDDDDDDDD
+   ========================================= */
 /* Table with built-in scrolling */
 table {
   width: 100%;
@@ -248,18 +250,18 @@ th {
   color: white;
   font-weight: 600;
   text-align: left;
-  padding: 14px 16px;
+  padding: 16px 20px;
   border: 1px solid #34495e;
-  min-width: 150px;
+  min-width: 220px;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* First column sticky (optional - remove if not needed) */
+/* First column - Product name needs more space */
 th:first-child,
 td:first-child {
-  min-width: 200px;
+  min-width: 280px;
   position: sticky;
   left: 0;
   background-color: inherit;
@@ -272,10 +274,10 @@ th:first-child {
 
 /* Table cells */
 td {
-  padding: 12px 16px;
+  padding: 14px 20px;
   border: 1px solid #ddd;
   vertical-align: top;
-  min-width: 180px;
+  min-width: 220px;
   white-space: normal;
   word-wrap: break-word;
 }
@@ -317,39 +319,39 @@ table::-webkit-scrollbar-thumb:hover {
 /* Responsive adjustments - Keep columns wide, force scrolling */
 @media screen and (max-width: 1024px) {
   th, td {
-    min-width: 180px;
-    padding: 10px 14px;
-    font-size: 14px;
+    min-width: 200px;
+    padding: 14px 18px;
+    font-size: 15px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 200px;
+    min-width: 260px;
   }
 }
 
 @media screen and (max-width: 768px) {
   th, td {
-    min-width: 180px;
-    padding: 5px 5px;
-    font-size: 14px;
+    min-width: 200px;
+    padding: 14px 18px;
+    font-size: 15px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 180px;
+    min-width: 240px;
   }
 }
 
 @media screen and (max-width: 480px) {
   th, td {
-    min-width: 160px;
-    padding: 5px 5px;
-    font-size: 13px;
+    min-width: 180px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
   
   th:first-child,
   td:first-child {
-    min-width: 160px;
+    min-width: 220px;
   }
 }
