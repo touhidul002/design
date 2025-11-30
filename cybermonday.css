@@ -4,7 +4,6 @@ body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
 }
-
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -18,11 +17,9 @@ body {
     z-index: 1000;
     animation: fadeIn 0.3s ease;
 }
-
 .popup-overlay.hidden {
     display: none;
 }
-
 .promo-popup {
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: #ffffff;
@@ -34,14 +31,11 @@ body {
     max-width: 500px;
     width: 90%;
     animation: slideIn 0.4s ease;
-    cursor: pointer;
     transition: transform 0.2s ease;
 }
-
 .promo-popup:hover {
     transform: scale(1.02);
 }
-
 .promo-popup::before {
     content: '';
     position: absolute;
@@ -52,7 +46,6 @@ body {
     background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
     animation: shine 3s infinite;
 }
-
 .close-btn {
     position: absolute;
     top: 10px;
@@ -74,13 +67,19 @@ body {
     line-height: 1;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
-
 .close-btn:hover {
     background: #ff0000;
     transform: rotate(90deg) scale(1.1);
     box-shadow: 0 5px 15px rgba(255, 68, 68, 0.5);
 }
-
+.promo-link {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
 .promo-text {
     position: relative;
     z-index: 1;
@@ -90,7 +89,6 @@ body {
     letter-spacing: 1px;
     text-align: center;
 }
-
 .promo-text .highlight {
     color: #ffd700;
     text-transform: uppercase;
@@ -99,12 +97,20 @@ body {
     display: block;
     margin: 10px 0;
 }
-
 .promo-text .emoji {
     display: inline-block;
     animation: bounce 1s infinite;
 }
-
+.cta-text {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    color: #ffd700;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: normal;
+    opacity: 0.9;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -113,7 +119,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes slideIn {
     from {
         transform: translateY(-50px);
@@ -124,7 +129,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes shine {
     0% {
         transform: translateX(-100%) translateY(-100%) rotate(45deg);
@@ -133,7 +137,6 @@ body {
         transform: translateX(100%) translateY(100%) rotate(45deg);
     }
 }
-
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -142,7 +145,6 @@ body {
         transform: translateY(-5px);
     }
 }
-
 @media (max-width: 768px) {
     .promo-popup {
         padding: 18px 20px;
@@ -160,5 +162,9 @@ body {
     
     .promo-text .highlight {
         font-size: 26px;
+    }
+    
+    .cta-text {
+        font-size: 12px;
     }
 }
