@@ -1,7 +1,7 @@
 // ========================================
 // CONFIGURE POPUP TIMING HERE (in milliseconds)
 // ========================================
-const POPUP_DELAY = 3000; // 3000ms = 3 seconds
+const POPUP_DELAY = 15000; // 3000ms = 3 seconds
 // Change this number:
 // 1000 = 1 second
 // 3000 = 3 seconds
