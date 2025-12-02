@@ -293,7 +293,7 @@
     }
 
     .product-carousel-container .amazon-link::after {
-        content: "Buy on Amazon"; /* New Text */
+        content: "View on Amazon"; /* New Text */
         font-size: 13px;
         font-weight: 400;
     }
@@ -400,6 +400,7 @@ table::-webkit-scrollbar-thumb:hover {
     font-size: 13px;
   }
 }
+
 
 
 
