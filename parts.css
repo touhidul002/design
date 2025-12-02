@@ -300,5 +300,107 @@
 }
 
 
+/* =========================================
+   EEEEEEEEEENNNNDDDDDDDD
+   ========================================= */
+/* Table wrapper - this makes scrolling work */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+}
+
+/* Keep table structure intact */
+thead, tbody {
+  display: table;
+  width: 100%;
+}
+
+tr {
+  display: table-row;
+}
+
+th, td {
+  display: table-cell;
+}
+
+/* Table headers */
+th {
+  background-color: #2c3e50;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 16px 20px;
+  border: 1px solid #34495e;
+  min-width: 200px;
+  white-space: nowrap;
+}
+
+/* Table cells */
+td {
+  padding: 14px 20px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  min-width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.6;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.2s ease;
+}
+
+/* Scrollbar styling */
+table::-webkit-scrollbar {
+  height: 10px;
+}
+
+table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+table::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+table::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Mobile - keep columns readable, allow scrolling */
+@media screen and (max-width: 768px) {
+  th, td {
+    min-width: 180px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  th, td {
+    min-width: 160px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+
 
 
