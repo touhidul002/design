@@ -18,9 +18,8 @@
 }
 
 .g1-product-image img {
-    width: 50vw;
-    height: 50vh;
-    object-fit: cover;
+    width: 413px;
+    height: 352px;
 }
 
 .g1-product-info {
