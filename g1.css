@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 63px 20px;
+}
+.product-review {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.product-image img {
+    width: 613px;
+    height: 652px;
+}
+
+.product-info {
+  flex: 1;
+  position: relative;
+}
+
+.ranking-number {
+  font-size: 120px;
+  font-weight: 900;
+  color: #000;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.badge {
+    background-color: #ffd700;
+    color: #000;
+    font-family:"Poppins" ;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 2.4px;
+    line-height: 16.8px;
+}
+
+.product-title {
+    font-size: 31px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 34.1px;
+    padding: 5px 0px 0px;
+}
+
+.price-button {
+    background-color: #4ecdc4;
+    color: #000;
+    border: none;
+    padding: 13px 20px 12px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 20px 0px;
+    transition: background-color 0.3s ease;
+}
+
+.price-button:hover {
+  background-color: #088092;
+  color: white;
+}
+
+.credit {
+    font-size: 12px;
+    color: #737373;
+    font-weight: 400;
+    line-height: 11px;
+    padding: 0px 5px 0px 0px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pros-cons-section {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.pros, .cons {
+    flex: 1;
+    padding: 30px 18px;
+    border: thin solid #D4D4D4;
+}
+
+.pros h3, .cons h3 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 15px;
+    letter-spacing: 2.4px;
+}
+
+.pros-items{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pros-text {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+
+.cons li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.product-description {
+  margin-bottom: 40px;
+}
+
+.product-description p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.specifications-table table {
+  width: 100%;
+}
+
+.specifications-table th {
+    background-color: #CFFAFE;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px;
+    text-align: center;
+}
+
+.specifications-table td {
+    padding: 12px;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    background-color: #ECFEFF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .product-review {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ranking-number {
+    font-size: 80px;
+  }
+
+  .product-title {
+    font-size: 24px;
+  }
+
+  .pros-cons-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .specifications-table {
+    overflow-x: auto;
+  }
+
+  .specifications-table table {
+   max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ranking-number {
+    font-size: 60px;
+  }
+  .container {
+    padding: 40px 20px;
+}
+  .product-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .price-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .product-description p {
+    font-size: 14px;
+  }
+}
