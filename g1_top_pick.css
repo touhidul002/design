@@ -1,0 +1,273 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #FFFFFF;
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+    /* Button style start here */
+    
+        .shop-button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 20px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .shop-button::after {
+            content: '▶';
+            margin-left: 8px;
+            font-size: 10px;
+        }
+
+        .shop-button:hover {
+            background: #c82333;
+        }
+        /* Button style end here */
+
+     .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+      .header {
+        padding: 20px 30px;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 4px 30px;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 1px;
+            position: relative;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+.badge {
+    width: 60px;
+    height: 80px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 20px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    flex-shrink: 0;
+}
+.badge-image {
+    width: 40px;
+    height: auto;
+}
+     
+
+        .badge.gaming::after {
+            border-top-color: #6c757d;
+        }
+        .badge.budget::after {
+            border-top-color: #17a2b8;
+        }
+
+        .badge.oldgen::after {
+            border-top-color: #17a2b8;
+        }
+
+        .badge.amd::after {
+            border-top-color: #17a2b8;
+        }
+
+       .product-image {
+            width: 160px;
+            height: 80px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+       .product-image img {
+            width: 100% !important;
+            height: 90px !important;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .product-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-category {
+            color: #007bff;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+       .glanceproduct-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .product-specs {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .spec-row {
+            margin-bottom: 2px;
+        }
+
+        .spec-row:last-child {
+            margin-bottom: 0;
+        }
+
+      .rating {
+            margin-bottom: 8px;
+            text-align: center;
+            padding: 12px 0px;
+        }
+
+       .stars {
+            color: #0094C1;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+       .review-link {
+            color: #007bff;
+            text-decoration: none;
+            text-decoration: underline;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .review-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+                .rating {
+                    display: none;
+                    margin-bottom: 8px;
+                    text-align: center;
+                    padding: 12px 0px;
+                }
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .product-item {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            .badge {
+                width: 50px;
+                height: 60px;
+                font-size: 9px;
+                margin-right: 15px;
+            }
+
+            .product-image {
+                width: 60px;
+                height: 60px;
+                margin-right: 15px;
+            }
+
+            .product-title {
+                font-size: 16px;
+            }
+
+            .shop-button {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+        .rating {
+            display: none;
+            margin-bottom: 8px;
+            text-align: center;
+            padding: 12px 0px;
+        }
+        .product-image img {
+            width: 80px !important;
+            height: 60px !important;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+            .badge {
+                align-self: flex-start;
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .product-image {
+                align-self: center;
+                margin: 10px 0;
+            }
+
+            .product-content {
+                width: 100%;
+            }
+
+            .shop-button {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
