@@ -1,45 +1,58 @@
 /* =====================================================
    Prefix: basemgu27_
 
-   Two independent sections:
-
-   1) .basemgu27_review  -> single product review card
-   2) .basemgu27_glance  -> comparison / at-a-glance table
+   Sections:
+   1) .basemgu27_review  -> Product review card
+   2) .basemgu27_glance  -> Comparison table
 
    Updates:
-   - All H2 without a class use glance-title design
-   - Amazon button text always white
-   - Spacing added after every product card
+   - Normal H2 headings use glance-title design
+   - WordPress wp-block-heading supported
+   - Product H2 title remains independent
+   - Amazon button text forced white
+   - Space added after each product card
    ===================================================== */
 
 
 /* =====================================================
-   GLOBAL H2 WITHOUT CLASS
-   Same design as .basemgu27_glance_title
+   GLOBAL NORMAL H2 DESIGN
+   Applies to:
+   <h2>...</h2>
+
+   Also supports WordPress:
+   <h2 class="wp-block-heading">...</h2>
    ===================================================== */
 
-h2:not([class]) {
-  display: block;
-  margin: 0 0 16px;
-  padding: 0 0 0 14px;
-  border-left: 4px solid #0f766e;
+html body h2:not([class]),
+html body h2.wp-block-heading:not(.basemgu27_review_title):not(.basemgu27_glance_title) {
+  display: block !important;
+
+  margin: 0 0 16px !important;
+  padding: 0 0 0 14px !important;
+
+  border: 0 !important;
+  border-left: 4px solid #0f766e !important;
+
+  background: transparent !important;
 
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
+               Roboto, Helvetica, Arial, sans-serif !important;
 
-  font-size: 26px;
-  line-height: 1.25;
-  font-weight: 800;
+  font-size: 26px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
 
-  color: #0f172a;
+  color: #0f172a !important;
 
-  letter-spacing: -0.01em;
-  text-transform: none;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+
+  box-shadow: none !important;
 }
 
 
 /* =====================================================
-   1) PRODUCT REVIEW CARD
+   1) PRODUCT REVIEW
    ===================================================== */
 
 .basemgu27_review {
@@ -74,14 +87,19 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Review Card
-   ------------------------- */
+/* =====================================================
+   PRODUCT CARD
+   ===================================================== */
 
 .basemgu27_review_card {
   display: block;
 
-  /* Space after every product */
+  width: 100%;
+
+  /*
+     Space after every product.
+     Prevents next product from touching previous card.
+  */
   margin: 0 0 24px;
 
   padding: 25px;
@@ -93,37 +111,45 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Product Title
-   ------------------------- */
+/* =====================================================
+   PRODUCT TITLE H2
+   ===================================================== */
 
-.basemgu27_review_title {
-  display: block;
+.basemgu27_review_title,
+html body h2.basemgu27_review_title {
+  display: block !important;
 
-  margin: 0 0 8px;
-  padding: 0;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
 
-  font-family: inherit;
+  border: 0 !important;
 
-  font-size: 28px;
-  line-height: 1.25;
-  font-weight: 800;
+  background: transparent !important;
 
-  color: var(--basemgu27_ink);
+  font-family: inherit !important;
 
-  letter-spacing: 0;
-  text-transform: none;
+  font-size: 28px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+
+  color: var(--basemgu27_ink) !important;
+
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+
+  box-shadow: none !important;
 }
 
 
-/* -------------------------
-   Best For Badge
-   ------------------------- */
+/* =====================================================
+   BEST FOR BADGE
+   ===================================================== */
 
 .basemgu27_review_badge {
   display: block;
 
   margin: 0 0 16px;
+  padding: 0;
 
   font-family: inherit;
 
@@ -135,9 +161,9 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Content
-   ------------------------- */
+/* =====================================================
+   REVIEW CONTENT
+   ===================================================== */
 
 .basemgu27_review_content {
   display: block;
@@ -163,9 +189,9 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Specifications
-   ------------------------- */
+/* =====================================================
+   SPECIFICATIONS
+   ===================================================== */
 
 .basemgu27_review_specs {
   display: block;
@@ -200,13 +226,14 @@ h2:not([class]) {
 
 
 /* =====================================================
-   Pros & Cons
+   PROS & CONS
    ===================================================== */
 
 .basemgu27_review_pc {
   display: grid;
 
   grid-template-columns: 1fr 1fr;
+
   gap: 16px;
 
   margin: 0 0 16px;
@@ -264,9 +291,9 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Pros / Cons List
-   ------------------------- */
+/* =====================================================
+   PROS / CONS LIST
+   ===================================================== */
 
 .basemgu27_review_list {
   display: block;
@@ -282,6 +309,7 @@ h2:not([class]) {
   display: flex;
 
   align-items: flex-start;
+
   gap: 6px;
 
   margin: 0 0 6px;
@@ -314,9 +342,9 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Price / Other Lines
-   ------------------------- */
+/* =====================================================
+   PRICE / OTHER LINES
+   ===================================================== */
 
 .basemgu27_review_line {
   display: block;
@@ -336,6 +364,7 @@ h2:not([class]) {
 
 .basemgu27_review_line strong {
   font-weight: 700;
+
   color: var(--basemgu27_ink);
 }
 
@@ -344,10 +373,13 @@ h2:not([class]) {
    AMAZON BUTTON
    ===================================================== */
 
-.basemgu27_review_btn,
-.basemgu27_review_btn:link,
-.basemgu27_review_btn:visited {
+html body .basemgu27_review_btn,
+html body a.basemgu27_review_btn,
+html body a.basemgu27_review_btn:link,
+html body a.basemgu27_review_btn:visited {
   display: inline-block;
+
+  width: auto;
 
   margin: 8px 0 0;
   padding: 0 24px;
@@ -357,14 +389,15 @@ h2:not([class]) {
 
   background: var(--basemgu27_btn);
 
-  /* Always white */
   color: #ffffff !important;
 
   font-family: inherit;
+
   font-size: 17px;
   font-weight: 700;
 
   text-align: center;
+
   text-decoration: none !important;
 
   border: 0;
@@ -378,66 +411,26 @@ h2:not([class]) {
 }
 
 
-.basemgu27_review_btn:hover,
-.basemgu27_review_btn:active,
-.basemgu27_review_btn:focus,
-.basemgu27_review_btn:focus-visible,
-.basemgu27_review_btn:visited:hover {
+html body .basemgu27_review_btn:hover,
+html body .basemgu27_review_btn:active,
+html body .basemgu27_review_btn:focus,
+html body .basemgu27_review_btn:focus-visible,
+html body a.basemgu27_review_btn:hover,
+html body a.basemgu27_review_btn:active,
+html body a.basemgu27_review_btn:focus,
+html body a.basemgu27_review_btn:visited:hover {
   background: var(--basemgu27_btn_hover);
 
   color: #ffffff !important;
+
   text-decoration: none !important;
 }
 
 
-.basemgu27_review_btn:focus-visible {
+html body .basemgu27_review_btn:focus-visible {
   outline: 2px solid var(--basemgu27_ink);
+
   outline-offset: 2px;
-}
-
-
-/* =====================================================
-   PRODUCT REVIEW - MOBILE
-   ===================================================== */
-
-@media (max-width: 600px) {
-
-  .basemgu27_review_card {
-    padding: 18px 16px;
-
-    /* Space after each product on mobile */
-    margin: 0 0 20px;
-  }
-
-
-  .basemgu27_review_title {
-    font-size: 24px;
-  }
-
-
-  .basemgu27_review_badge {
-    font-size: 16px;
-  }
-
-
-  .basemgu27_review_pc {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-
-  .basemgu27_review_btn,
-  .basemgu27_review_btn:link,
-  .basemgu27_review_btn:visited {
-    display: block;
-
-    width: 100%;
-
-    padding: 0 16px;
-
-    color: #ffffff !important;
-    text-decoration: none !important;
-  }
 }
 
 
@@ -479,27 +472,34 @@ h2:not([class]) {
 
 
 /* =====================================================
-   SECTION HEADER H2
+   AT-A-GLANCE H2
    ===================================================== */
 
-.basemgu27_glance_title {
-  display: block;
+.basemgu27_glance_title,
+html body h2.basemgu27_glance_title {
+  display: block !important;
 
-  margin: 0 0 16px;
-  padding: 0 0 0 14px;
+  margin: 0 0 16px !important;
+  padding: 0 0 0 14px !important;
 
-  border-left: 4px solid var(--basemgu27_g_teal);
+  border: 0 !important;
+  border-left: 4px solid #0f766e !important;
 
-  font-family: inherit;
+  background: transparent !important;
 
-  font-size: 26px;
-  line-height: 1.25;
-  font-weight: 800;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif !important;
 
-  color: var(--basemgu27_g_ink);
+  font-size: 26px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
 
-  letter-spacing: -0.01em;
-  text-transform: none;
+  color: #0f172a !important;
+
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+
+  box-shadow: none !important;
 }
 
 
@@ -513,6 +513,7 @@ h2:not([class]) {
   width: 100%;
 
   overflow-x: auto;
+
   -webkit-overflow-scrolling: touch;
 
   border: 1px solid var(--basemgu27_g_line);
@@ -526,6 +527,7 @@ h2:not([class]) {
 
 .basemgu27_glance_table {
   width: 100%;
+
   min-width: 820px;
 
   margin: 0;
@@ -578,6 +580,7 @@ h2:not([class]) {
 
   border: 0;
   border-bottom: 2px solid #0d544f;
+
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -587,9 +590,9 @@ h2:not([class]) {
 }
 
 
-/* -------------------------
-   Sticky Product Header
-   ------------------------- */
+/* =====================================================
+   STICKY PRODUCT HEADER
+   ===================================================== */
 
 .basemgu27_glance_th_product {
   position: sticky;
@@ -607,7 +610,7 @@ h2:not([class]) {
 
 
 /* =====================================================
-   SCREEN READER HIDDEN
+   HIDDEN / SCREEN READER
    ===================================================== */
 
 .basemgu27_glance_hidden {
@@ -731,36 +734,107 @@ h2:not([class]) {
 
 
 /* =====================================================
-   RESPONSIVE MOBILE TABLE
+   MOBILE
    ===================================================== */
 
 @media (max-width: 767px) {
 
-  /* H2 without class */
-  h2:not([class]) {
-    font-size: 22px;
+  /* ---------------------------------
+     Normal H2
+     --------------------------------- */
 
-    margin-bottom: 14px;
+  html body h2:not([class]),
+  html body h2.wp-block-heading:not(.basemgu27_review_title):not(.basemgu27_glance_title) {
+    margin: 0 0 14px !important;
 
-    padding-left: 10px;
+    padding: 0 0 0 10px !important;
 
-    border-left-width: 3px;
+    border-left: 3px solid #0f766e !important;
+
+    font-size: 22px !important;
+    line-height: 1.25 !important;
   }
 
 
-  .basemgu27_glance_title {
-    font-size: 22px;
+  /* ---------------------------------
+     Glance Title
+     --------------------------------- */
 
-    margin-bottom: 14px;
+  .basemgu27_glance_title,
+  html body h2.basemgu27_glance_title {
+    margin: 0 0 14px !important;
 
-    padding-left: 10px;
+    padding: 0 0 0 10px !important;
 
-    border-left-width: 3px;
+    border-left: 3px solid #0f766e !important;
+
+    font-size: 22px !important;
+    line-height: 1.25 !important;
   }
 
+
+  /* ---------------------------------
+     Review Card
+     --------------------------------- */
+
+  .basemgu27_review_card {
+    margin: 0 0 20px;
+
+    padding: 18px 16px;
+  }
+
+
+  .basemgu27_review_title,
+  html body h2.basemgu27_review_title {
+    margin: 0 0 8px !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    font-size: 24px !important;
+  }
+
+
+  .basemgu27_review_badge {
+    font-size: 16px;
+  }
+
+
+  .basemgu27_review_pc {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  /* ---------------------------------
+     Amazon Button
+     --------------------------------- */
+
+  html body .basemgu27_review_btn,
+  html body a.basemgu27_review_btn,
+  html body a.basemgu27_review_btn:link,
+  html body a.basemgu27_review_btn:visited {
+    display: block;
+
+    width: 100%;
+
+    padding: 0 16px;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+  }
+
+
+  /* ---------------------------------
+     Comparison Table
+     --------------------------------- */
 
   .basemgu27_glance_container {
     border: 0;
+
     border-radius: 0;
 
     box-shadow: none;
@@ -797,9 +871,11 @@ h2:not([class]) {
     background: #ffffff;
 
     border: 1px solid var(--basemgu27_g_line);
+
     border-radius: 10px;
 
     margin-bottom: 14px;
+
     padding: 0;
 
     overflow: hidden;
