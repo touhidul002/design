@@ -35,7 +35,7 @@
 
 .basemgu27_review_card {
   display: block;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 25px;
   background: #ffffff;
   border: 1px solid var(--basemgu27_line);
@@ -215,10 +215,11 @@
 .basemgu27_review_btn:hover,
 .basemgu27_review_btn:focus-visible {
   background: var(--basemgu27_btn_hover);
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
 
+/* Focus */
 .basemgu27_review_btn:focus-visible {
   outline: 2px solid var(--basemgu27_ink);
   outline-offset: 2px;
