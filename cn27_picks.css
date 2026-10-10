@@ -11,10 +11,10 @@
 
 /* All component styles are scoped to avoid affecting the rest of your page. */
 .cn27_pick_picks, .cn27_pick_picks * { box-sizing: border-box; }
-.cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; container-type: inline-size; container-name: cn27_picks; }
+.cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; }
 .cn27_pick_heading { font-size: 27px; line-height: 1.2; font-weight: 800; margin: 0 0 20px; letter-spacing: -1px; }
 
-/* ONE ROW: image | text | button (flex, theme-proof) */
+/* DESKTOP: ONE ROW  image | text | button */
 .cn27_pick_picks .cn27_pick_product {
   display: flex !important;
   flex-flow: row nowrap !important;
@@ -37,14 +37,14 @@
   object-fit: contain;
 }
 
-/* Text: fills the middle, sits close to the image */
+/* Text: fills the middle */
 .cn27_pick_picks .cn27_pick_info {
   flex: 1 1 auto !important;
   min-width: 0;
   margin: 0 !important;
 }
 
-/* Button: pushed to the right end of the same row */
+/* Button: right end of the same row */
 .cn27_pick_picks .cn27_pick_price {
   flex: 0 0 190px !important;
   width: 190px !important;
@@ -73,12 +73,38 @@
 .cn27_pick_extra { padding-top: 20px; }
 .cn27_pick_picks a:focus-visible, .cn27_pick_picks summary:focus-visible { outline: 3px solid #137e7c; outline-offset: 4px; }
 
-/* Narrow containers: still ONE row, just smaller */
-@container cn27_picks (max-width: 460px) {
+/* MOBILE (500px and below):
+   row 1 = image + text, row 2 = full-width button */
+@media (max-width: 500px) {
   .cn27_pick_heading { font-size: 21px; margin-bottom: 16px; }
-  .cn27_pick_picks .cn27_pick_product { gap: 10px; padding: 16px 0; }
-  .cn27_pick_picks .cn27_pick_image { flex: 0 0 21% !important; width: 21% !important; height: 96px; }
-  .cn27_pick_picks .cn27_pick_price { flex: 0 0 32% !important; width: 32% !important; font-size: 10px; padding: 10px 5px; min-height: 40px; }
+
+  .cn27_pick_picks .cn27_pick_product {
+    flex-flow: row wrap !important;   /* allow the button to drop to a new row */
+    align-items: center !important;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .cn27_pick_picks .cn27_pick_image {
+    flex: 0 0 96px !important;
+    width: 96px !important;
+    height: 96px;
+  }
+
+  .cn27_pick_picks .cn27_pick_info {
+    flex: 1 1 0 !important;           /* takes the rest of row 1 */
+  }
+
+  .cn27_pick_picks .cn27_pick_price {
+    flex: 0 0 100% !important;        /* full width = its own row */
+    width: 100% !important;
+    margin: 0 !important;
+    order: 3;
+    min-height: 44px;
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
   .cn27_pick_award { font-size: 10px; margin-bottom: 8px; }
   .cn27_pick_name { font-size: 16px; margin-bottom: 8px; }
   .cn27_pick_review { font-size: 10px; }
