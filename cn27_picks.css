@@ -9,7 +9,7 @@
 .cn27_pick_picks [id] { scroll-margin-top: 24px; }
 /* All component styles are scoped to avoid affecting the rest of your page. */
 .cn27_pick_picks, .cn27_pick_picks * { box-sizing: border-box; }
-.cn27_pick_picks { width: min(100%, 548px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; }
+.cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; }
 .cn27_pick_heading { font-size: 27px; line-height: 1.2; font-weight: 800; margin: 0 0 20px; letter-spacing: -1px; }
 .cn27_pick_product { display: grid; grid-template-columns: 22% minmax(0,1fr) 35%; align-items: center; gap: 18px; padding: 20px 0; border-bottom: 1px solid #969696; }
 .cn27_pick_product:first-child { padding-top: 0; }
