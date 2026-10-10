@@ -11,35 +11,46 @@
 
 /* All component styles are scoped to avoid affecting the rest of your page. */
 .cn27_pick_picks, .cn27_pick_picks * { box-sizing: border-box; }
-.cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; }
+.cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; container-type: inline-size; container-name: cn27_picks; }
 .cn27_pick_heading { font-size: 27px; line-height: 1.2; font-weight: 800; margin: 0 0 20px; letter-spacing: -1px; }
 
-/* ONE ROW: image | text | button */
-.cn27_pick_product {
-  display: grid;
-  grid-template-columns: minmax(90px, 18%) minmax(0, 1fr) minmax(150px, 26%);
-  grid-template-areas: "img info btn";
-  column-gap: 16px;
-  row-gap: 0;
-  align-items: center;
+/* ONE ROW: image | text | button (flex, theme-proof) */
+.cn27_pick_picks .cn27_pick_product {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  gap: 16px;
   padding: 20px 0;
   border-bottom: 1px solid #969696;
+  float: none;
 }
-.cn27_pick_product:first-child { padding-top: 0; }
-.cn27_pick_product > * { min-width: 0; }
+.cn27_pick_picks .cn27_pick_product:first-child { padding-top: 0; }
 
-/* Explicit placement: independent of DOM order, always row 1 */
-.cn27_pick_product > .cn27_pick_image,
-.cn27_pick_product > :has(> .cn27_pick_image) { grid-area: img; }  /* also works if img is wrapped in a link */
-.cn27_pick_info  { grid-area: info; min-width: 0; }
-.cn27_pick_price { grid-area: btn; }
+/* Image: fixed left column */
+.cn27_pick_picks .cn27_pick_image {
+  flex: 0 0 140px !important;
+  width: 140px !important;
+  height: 140px;
+  margin: 0 !important;
+  display: block;
+  object-fit: contain;
+}
 
-.cn27_pick_image { display: block; width: 100%; height: 140px; object-fit: contain; }
-.cn27_pick_award { margin: 0 0 12px; font-size: 12px; line-height: 1.15; font-weight: 800; letter-spacing: .2px; text-transform: uppercase; }
-.cn27_pick_name { margin: 0 0 12px; font-size: 21px; line-height: 1.06; font-weight: 700; letter-spacing: -.5px; }
-.cn27_pick_review { color: inherit; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: underline; text-underline-offset: 3px; }
+/* Text: fills the middle, sits close to the image */
+.cn27_pick_picks .cn27_pick_info {
+  flex: 1 1 auto !important;
+  min-width: 0;
+  margin: 0 !important;
+}
 
-.cn27_pick_price {
+/* Button: pushed to the right end of the same row */
+.cn27_pick_picks .cn27_pick_price {
+  flex: 0 0 190px !important;
+  width: 190px !important;
+  margin: 0 0 0 auto !important;
+  position: static !important;
+  float: none !important;
   display: flex; align-items: center; justify-content: center;
   min-height: 36px; padding: 10px 8px;
   background: #50bfbd; color: #000;
@@ -47,6 +58,10 @@
   font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: .25px;
 }
 .cn27_pick_price:hover { background: #3caba9; }
+
+.cn27_pick_award { margin: 0 0 12px; font-size: 12px; line-height: 1.15; font-weight: 800; letter-spacing: .2px; text-transform: uppercase; }
+.cn27_pick_name { margin: 0 0 12px; font-size: 21px; line-height: 1.06; font-weight: 700; letter-spacing: -.5px; }
+.cn27_pick_review { color: inherit; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: underline; text-underline-offset: 3px; }
 
 .cn27_pick_more { margin-top: 4px; }
 .cn27_pick_toggle { display: flex; justify-content: center; align-items: center; min-height: 44px; padding: 10px; border: 2px solid #111; cursor: pointer; list-style: none; font-size: 12px; font-weight: 800; text-transform: uppercase; }
@@ -58,19 +73,13 @@
 .cn27_pick_extra { padding-top: 20px; }
 .cn27_pick_picks a:focus-visible, .cn27_pick_picks summary:focus-visible { outline: 3px solid #137e7c; outline-offset: 4px; }
 
-.cn27_pick_picks { container-type: inline-size; container-name: cn27_picks; }
-
-/* Small containers: still ONE row, just tighter */
+/* Narrow containers: still ONE row, just smaller */
 @container cn27_picks (max-width: 460px) {
   .cn27_pick_heading { font-size: 21px; margin-bottom: 16px; }
-  .cn27_pick_product {
-    grid-template-columns: 21% minmax(0, 1fr) 32%;
-    column-gap: 10px;
-    padding: 16px 0;
-  }
-  .cn27_pick_image { height: 96px; }
+  .cn27_pick_picks .cn27_pick_product { gap: 10px; padding: 16px 0; }
+  .cn27_pick_picks .cn27_pick_image { flex: 0 0 21% !important; width: 21% !important; height: 96px; }
+  .cn27_pick_picks .cn27_pick_price { flex: 0 0 32% !important; width: 32% !important; font-size: 10px; padding: 10px 5px; min-height: 40px; }
   .cn27_pick_award { font-size: 10px; margin-bottom: 8px; }
   .cn27_pick_name { font-size: 16px; margin-bottom: 8px; }
   .cn27_pick_review { font-size: 10px; }
-  .cn27_pick_price { font-size: 10px; padding: 10px 5px; min-height: 40px; }
 }
