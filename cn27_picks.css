@@ -2,7 +2,7 @@
 .cn27_demo { margin: 0; padding: 16px 24px 40px; background: #fff; }
 
 /* Component-owned defaults resist generic theme typography. */
-.cn27_pick_picks { display: block; font: 400 16px/1.4 Arial, sans-serif; text-align: left; text-transform: none; letter-spacing: normal; color: #080808; background: #fff; overflow-wrap: anywhere; isolation: isolate; }
+.cn27_pick_picks { display: block; font: 400 16px/1.4 Arial, sans-serif; text-align: left; text-transform: none; letter-spacing: normal; color: #080808; background: #fff; overflow-wrap: break-word; isolation: isolate; }
 .cn27_pick_picks :where(h2,h3,h4,p,a,span,div,ul,li,summary,th,td) { font-family: inherit; color: inherit; text-transform: none; letter-spacing: normal; }
 .cn27_pick_picks :where(h2,h3,h4,p,ul,figure) { margin: 0; padding: 0; }
 .cn27_pick_picks :where(h2,h3,h4) { border: 0; background: transparent; }
@@ -14,8 +14,8 @@
 .cn27_pick_picks { width: min(100%, 848px); margin: 0 auto; color: #080808; font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif; }
 .cn27_pick_heading { font-size: 27px; line-height: 1.2; font-weight: 800; margin: 0 0 20px; letter-spacing: -1px; }
 
-/* DESKTOP: ONE ROW  image | text | button */
-.cn27_pick_picks .cn27_pick_product {
+/* ===== DESKTOP: ONE ROW  image | text | button ===== */
+.cn27_pick_picks .cn27_pick_list > article.cn27_pick_product {
   display: flex !important;
   flex-flow: row nowrap !important;
   align-items: center !important;
@@ -25,10 +25,9 @@
   border-bottom: 1px solid #969696;
   float: none;
 }
-.cn27_pick_picks .cn27_pick_product:first-child { padding-top: 0; }
+.cn27_pick_picks .cn27_pick_list > article.cn27_pick_product:first-child { padding-top: 0; }
 
-/* Image: fixed left column */
-.cn27_pick_picks .cn27_pick_image {
+.cn27_pick_picks .cn27_pick_list > article > img.cn27_pick_image {
   flex: 0 0 140px !important;
   width: 140px !important;
   height: 140px;
@@ -37,15 +36,13 @@
   object-fit: contain;
 }
 
-/* Text: fills the middle */
-.cn27_pick_picks .cn27_pick_info {
+.cn27_pick_picks .cn27_pick_list > article > .cn27_pick_info {
   flex: 1 1 auto !important;
   min-width: 0;
   margin: 0 !important;
 }
 
-/* Button: right end of the same row */
-.cn27_pick_picks .cn27_pick_price {
+.cn27_pick_picks .cn27_pick_list > article > a.cn27_pick_price {
   flex: 0 0 190px !important;
   width: 190px !important;
   margin: 0 0 0 auto !important;
@@ -57,7 +54,7 @@
   text-align: center; text-decoration: none; text-transform: uppercase;
   font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: .25px;
 }
-.cn27_pick_price:hover { background: #3caba9; }
+.cn27_pick_picks a.cn27_pick_price:hover { background: #3caba9; }
 
 .cn27_pick_award { margin: 0 0 12px; font-size: 12px; line-height: 1.15; font-weight: 800; letter-spacing: .2px; text-transform: uppercase; }
 .cn27_pick_name { margin: 0 0 12px; font-size: 21px; line-height: 1.06; font-weight: 700; letter-spacing: -.5px; }
@@ -73,33 +70,46 @@
 .cn27_pick_extra { padding-top: 20px; }
 .cn27_pick_picks a:focus-visible, .cn27_pick_picks summary:focus-visible { outline: 3px solid #137e7c; outline-offset: 4px; }
 
-/* MOBILE (500px and below):
-   row 1 = image + text, row 2 = full-width button */
+/* ===== MOBILE (500px and below) =====
+   row 1: image + text
+   row 2: full-width button */
 @media (max-width: 500px) {
   .cn27_pick_heading { font-size: 21px; margin-bottom: 16px; }
 
-  .cn27_pick_picks .cn27_pick_product {
-    flex-flow: row wrap !important;   /* allow the button to drop to a new row */
+  .cn27_pick_picks .cn27_pick_list > article.cn27_pick_product {
+    display: grid !important;
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+    grid-template-areas:
+      "img  info"
+      "btn  btn" !important;
+    column-gap: 14px !important;
+    row-gap: 12px !important;
     align-items: center !important;
-    gap: 12px;
-    padding: 16px 0;
+    padding: 16px 0 !important;
   }
 
-  .cn27_pick_picks .cn27_pick_image {
-    flex: 0 0 96px !important;
+  .cn27_pick_picks .cn27_pick_list > article > img.cn27_pick_image {
+    grid-area: img !important;
+    flex: none !important;
     width: 96px !important;
-    height: 96px;
+    height: 96px !important;
   }
 
-  .cn27_pick_picks .cn27_pick_info {
-    flex: 1 1 0 !important;           /* takes the rest of row 1 */
+  .cn27_pick_picks .cn27_pick_list > article > .cn27_pick_info {
+    grid-area: info !important;
+    flex: none !important;
+    min-width: 0 !important;
+    width: auto !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: manual !important;
   }
 
-  .cn27_pick_picks .cn27_pick_price {
-    flex: 0 0 100% !important;        /* full width = its own row */
+  .cn27_pick_picks .cn27_pick_list > article > a.cn27_pick_price {
+    grid-area: btn !important;
+    flex: none !important;
     width: 100% !important;
     margin: 0 !important;
-    order: 3;
     min-height: 44px;
     padding: 12px 10px;
     font-size: 12px;
