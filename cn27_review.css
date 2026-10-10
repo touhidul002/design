@@ -8,7 +8,7 @@
 .cn27_review_review img { max-width: 100%; border: 0; box-shadow: none; }
 .cn27_review_review [id] { scroll-margin-top: 24px; }
 .cn27_review_review, .cn27_review_review * { box-sizing: border-box; }
-.cn27_review_review { max-width: 1120px; margin: 0 auto; color: #080808; }
+.cn27_review_review { max-width: 1120px; margin: 20px auto 0; color: #080808; }
 .cn27_review_hero { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
 .cn27_review_visual { margin: 0; }
 .cn27_review_image { display: block; width: 100%; height: auto; }
