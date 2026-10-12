@@ -1,0 +1,240 @@
+/* All selectors are scoped to popmac components. No global element resets. */
+.popmac_picks,
+.popmac_review,
+.popmac_specs {
+  box-sizing: border-box;
+  display: block;
+  width: calc(100% - 32px);
+  max-width: 640px;
+  margin: 16px auto 40px;
+  padding: 0;
+  border: 0;
+  background: #fff;
+  color: #000;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.popmac_picks *, .popmac_review *, .popmac_specs * { box-sizing: border-box; }
+.popmac_picks_heading {
+  display: block;
+  margin: 0 0 13px;
+  padding: 0;
+  color: #000;
+  font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 1000;
+  line-height: 1.15;
+  letter-spacing: -.65px;
+  text-transform: none;
+  border: 0;
+  background: transparent;
+}
+.popmac_picks_list {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: disc outside;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.popmac_pick {
+  display: list-item;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.popmac_pick:last-child { margin-bottom: 0; }
+.popmac_pick_label { color: #000; font: inherit; }
+.popmac_pick_name { display: inline; margin: 0; padding: 0; border: 0; background: transparent; color: #000; font: inherit; letter-spacing: normal; text-transform: none; }
+.popmac_pick_link {
+  display: inline;
+  padding: 0;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: #206a67;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.popmac_pick_link:hover { color: #206a67; }
+.popmac_review { max-width: 612px; }
+.popmac_card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  color: #000;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.popmac_media {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 1;
+  background: #f3f4f1;
+}
+.popmac_image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+.popmac_product_info {
+  min-width: 0;
+  margin: 0;
+  padding: 36px 15px 24px;
+  border-left: 1px solid #d5d5d5;
+  background: #fff;
+}
+.popmac_badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 0;
+  background: #fffa32;
+  color: #000;
+  font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 1000;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: -.2px;
+}
+.popmac_product_title {
+  display: block;
+  margin: 0 0 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 1000;
+  line-height: 1.3;
+  letter-spacing: -.25px;
+  text-transform: none;
+  scroll-margin-top: 24px;
+}
+.popmac_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  max-width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 13px 21px;
+  border: 0;
+  border-radius: 0;
+  background: #206b68;
+  color: #fff;
+  font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 1000;
+  line-height: 1.4;
+  letter-spacing: -.2px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+.popmac_button:visited { color: #fff; }
+.popmac_button:hover { background: #15514f; color: #fff; text-decoration: none; }
+.popmac_button:focus-visible, .popmac_pick_link:focus-visible { outline: 3px solid #206b68; outline-offset: 4px; }
+.popmac_button_text { color: inherit; font: inherit; }
+.popmac_external_icon { display: block; flex: 0 0 16px; width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.popmac_credit {
+  display: block;
+  margin: 12px 0 0;
+  padding: 0;
+  color: #515151;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.popmac_pros, .popmac_cons { min-width: 0; margin: 0; padding: 31px 24px 24px; border-top: 1px solid #d5d5d5; background: #fff; }
+.popmac_cons { border-left: 1px solid #d5d5d5; }
+.popmac_panel_heading, .popmac_specs_heading {
+  display: block;
+  margin: 0 0 15px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 1000;
+  line-height: 1.4;
+  letter-spacing: -.2px;
+  text-transform: uppercase;
+}
+.popmac_pros_heading { color: #078334; }
+.popmac_cons_heading { color: #ff2328; }
+.popmac_points { display: block; margin: 0; padding: 0; list-style: none; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.2; }
+.popmac_point { display: flex; align-items: flex-start; gap: 9px; margin: 0 0 17px; padding: 0; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; line-height: 1.2; letter-spacing: .15px; list-style: none; }
+.popmac_point:last-child { margin-bottom: 0; }
+.popmac_point_icon { display: inline-flex; flex: 0 0 13px; align-items: center; justify-content: center; width: 13px; height: 13px; margin-top: 2px; border: 1.4px solid #007773; border-radius: 50%; color: #007773; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 700; line-height: 1; }
+.popmac_cons .popmac_point_icon { border-color: #ff3035; color: #ff3035; font-size: 12px; }
+.popmac_point_text { display: block; min-width: 0; color: #000; font: inherit; hyphens: auto; overflow-wrap: anywhere; }
+.popmac_specs { width: 100%; max-width: 612px; margin: 34px auto 18px; }
+.popmac_specs_heading { margin-bottom: 12px; }
+.popmac_table_wrap { display: block; width: 100%; margin: 0; padding: 0; }
+.popmac_specs_table { display: table; width: 100%; margin: 0; padding: 0; border: 0; border-collapse: collapse; table-layout: fixed; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.35; text-align: center; }
+.popmac_table_head { display: table-header-group; }
+.popmac_table_body { display: table-row-group; }
+.popmac_table_row { display: table-row; border: 0; }
+.popmac_spec_label, .popmac_spec_value { display: table-cell; width: 25%; margin: 0; padding: 11px 8px; border: 2px solid #fff; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; line-height: 1.35; vertical-align: middle; text-align: center; overflow-wrap: anywhere; }
+.popmac_spec_label { background: #afcaca; font-family: "Arial Black", "DejaVu Sans", Arial, sans-serif; font-size: 13px; font-weight: 1000; }
+.popmac_spec_value { background: #d2e2e2; }
+.popmac_content { display: block; margin: 0; padding: 0; color: #000; font-family: Georgia, "Times New Roman", serif; font-size: 20px; line-height: 1.45; text-align: left; }
+.popmac_paragraph { display: block; margin: 0 0 16px; padding: 0; color: #000; font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 400; line-height: 1.45; letter-spacing: normal; }
+@media (max-width: 600px) {
+  .popmac_picks_heading { font-size: 29px; }
+  .popmac_picks_list, .popmac_pick { font-size: 18px; }
+  .popmac_product_info { padding: 24px 15px; }
+  .popmac_product_title { font-size: 17px; margin-bottom: 24px; }
+  .popmac_pros, .popmac_cons { padding: 24px 16px; }
+  .popmac_point { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .popmac_picks, .popmac_review { width: calc(100% - 24px); }
+  .popmac_picks_heading { font-size: 27px; }
+  .popmac_card { grid-template-columns: minmax(0, 1fr); }
+  .popmac_product_info { border-left: 0; border-top: 1px solid #d5d5d5; padding: 24px; }
+  .popmac_product_title { font-size: 20px; }
+  .popmac_pros, .popmac_cons { padding: 24px; }
+  .popmac_cons { border-left: 0; }
+  .popmac_specs { width: 100%; margin-top: 28px; }
+  .popmac_spec_label, .popmac_spec_value { padding: 11px 4px; font-size: 12px; }
+  .popmac_content, .popmac_paragraph { font-size: 18px; }
+}
+
+/* Template addition: show whole product photos */
+.popmac_review .popmac_image { object-fit: contain !important; background: #fff !important; }

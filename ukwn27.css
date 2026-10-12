@@ -1,0 +1,93 @@
+/* Each section has its own layout and typography. No global HTML/body styles. */
+.ukwn27_picks, .ukwn27_review { box-sizing: border-box; display: block; width: calc(100% - 32px); margin: 0 auto; padding: 0; background: #fff; color: #111; text-align: left; }
+.ukwn27_picks *, .ukwn27_review * { box-sizing: border-box; }
+.ukwn27_picks { max-width: 768px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.3; }
+.ukwn27_picks .ukwn27_picks_title { position: relative; margin: 0 0 0; padding: 10px 0 8px; border-bottom: 1px solid #d5d5d5; font: 700 20px/1.3 Arial, Helvetica, sans-serif; letter-spacing: 1.15px; color: #242a2e; text-align: left; }
+.ukwn27_picks_title::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 64px; height: 6px; background: #111; }
+.ukwn27_picks .ukwn27_pick { display: block; margin: 0; padding: 0; background: #fff; border: 0; }
+.ukwn27_pick_main { display: grid; grid-template-columns: 120px minmax(0,1fr) 280px; align-items: center; gap: 16px; min-height: 122px; padding: 30px 0 20px; }
+.ukwn27_picks .ukwn27_pick_image { display: block; width: 120px; height: 68px; margin: 0; padding: 0; border: 1px solid #ddd; border-radius: 0; object-fit: cover; }
+.ukwn27_pick_info { margin: 0; padding: 0; max-width: 205px; }
+.ukwn27_picks .ukwn27_pick_tag { margin: 0 0 4px; padding: 0; font: 700 14px/1.3 Arial, Helvetica, sans-serif; color: #f00035; letter-spacing: 0; }
+.ukwn27_picks .ukwn27_pick_name { margin: 0; padding: 0; font: 700 16px/1.3 Arial, Helvetica, sans-serif; color: #20282d; letter-spacing: 0; }
+.ukwn27_pick_offer { width: 100%; margin: 0; padding: 0; text-align: center; }
+.ukwn27_picks .ukwn27_pick_price { margin: 0 0 8px; padding: 0; font: 400 12px/1.35 Arial, Helvetica, sans-serif; color: #344453; }
+.ukwn27_price_value { font-weight: 700; }
+.ukwn27_old_price { margin-left: 4px; color: #344453; font-weight: 700; }
+.ukwn27_saving { color: #f00035; font-weight: 700; white-space: nowrap; }
+.ukwn27_picks .ukwn27_pick_button { display: flex; width: 100%; min-height: 38px; align-items: center; justify-content: center; padding: 8px 20px; border: 0; border-radius: 7px; box-shadow: 0 4px 0 #bb0029; background: #ee0033; color: #fff; font: 700 14px/1.4 Arial, Helvetica, sans-serif; text-decoration: none; text-align: center; }
+.ukwn27_pick_details { margin: 0; padding: 0; border: 0; }
+.ukwn27_picks .ukwn27_pick_summary { display: flex; align-items: center; gap: 12px; padding: 0; margin: 0; color: #34404a; font: 700 12px/1.4 Arial, Helvetica, sans-serif; list-style: none; cursor: pointer; }
+.ukwn27_pick_summary::-webkit-details-marker { display: none; }
+.ukwn27_pick_summary::before, .ukwn27_pick_summary::after { content: ""; height: 1px; flex: 1; background: #d5d5d5; }
+.ukwn27_summary_label { white-space: nowrap; }
+.ukwn27_chevron { width: 10px; height: 10px; margin: -5px 8px 0 -2px; border-right: 3px solid #384048; border-bottom: 3px solid #384048; transform: rotate(45deg); }
+.ukwn27_pick_details[open] .ukwn27_chevron { margin-top: 5px; transform: rotate(225deg); }
+.ukwn27_pick_expanded { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 20px 16px; border-bottom: 1px solid #d5d5d5; background: #fafafa; }
+.ukwn27_picks .ukwn27_pick_subhead { margin: 0 0 8px; padding: 0; font: 700 13px/1.4 Arial, Helvetica, sans-serif; color: #222; }
+.ukwn27_picks .ukwn27_pick_list { margin: 0; padding: 0; list-style: none; }
+.ukwn27_picks .ukwn27_pick_item { position: relative; margin: 0 0 7px; padding: 0 0 0 20px; color: #222; font: 400 14px/1.4 Arial, Helvetica, sans-serif; }
+.ukwn27_pick_pros .ukwn27_pick_item::before { content: "\2713 "; position: absolute; left: 0; color: #29964f; font-weight: 700; }
+.ukwn27_pick_cons .ukwn27_pick_item::before { content: "\d7 "; position: absolute; left: 0; color: #ff363b; font-weight: 700; }
+/* Standalone full review. */
+.ukwn27_review { max-width: 720px; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; line-height: 1.45; }
+.ukwn27_review_card { display: block; margin: 0; padding: 0; border: 1px solid #d4d4d4; background: #fff; }
+.ukwn27_review_hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 359px; margin: 0; padding: 0; }
+.ukwn27_review_media { display: flex; align-items: center; justify-content: center; margin: 0; padding: 32px; }
+.ukwn27_review .ukwn27_review_image { display: block; width: 100%; height: 294px; max-width: 294px; object-fit: contain; margin: 0; padding: 0; border: 0; border-radius: 0; }
+.ukwn27_review_intro { margin: 0; padding: 48px 20px 30px; }
+.ukwn27_review_badge { display: block; margin: 0 0 23px 8px; padding: 0; color: #ff363c; font: 400 14px/1.35 'Courier New', monospace; letter-spacing: .7px; }
+.ukwn27_review .ukwn27_review_title { margin: 0 0 18px; padding: 0; color: #050505; font: 700 24px/1.2 Arial, Helvetica, sans-serif; letter-spacing: 0; scroll-margin-top: 24px; }
+.ukwn27_review .ukwn27_review_button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; margin: 0; padding: 12px 10px; border: 0; border-radius: 0; background: #df1c2e; color: #fff; font: 700 14px/1.3 Arial, Helvetica, sans-serif; text-decoration: none; }
+.ukwn27_external_icon { display: block; width: 19px; height: 19px; }
+.ukwn27_review_verdict { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #d4d4d4; }
+.ukwn27_review_pros, .ukwn27_review_cons { margin: 0; padding: 18px 0 24px 20px; }
+.ukwn27_review_cons { border-left: 1px solid #d4d4d4; padding-left: 24px; }
+.ukwn27_review .ukwn27_verdict_title { margin: 0 0 10px; padding: 0 0 2px; border-bottom: 1px solid #ff363c; color: #249447; font: 400 14px/1.4 'Courier New', monospace; letter-spacing: 0; }
+.ukwn27_review_cons .ukwn27_verdict_title { color: #ff363c; }
+.ukwn27_review .ukwn27_verdict_list { margin: 0; padding: 0; list-style: none; }
+.ukwn27_review .ukwn27_verdict_item { display: flex; gap: 9px; align-items: flex-start; margin: 0 0 16px; padding: 0 4px 0 0; color: #222; font: 400 14px/1.3 Arial, Helvetica, sans-serif; }
+.ukwn27_verdict_item:last-child { margin-bottom: 8px; }
+.ukwn27_check, .ukwn27_cross { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 13px; height: 13px; margin-top: 2px; border: 1.6px solid currentColor; border-radius: 50%; color: #249447; font: 700 9px/1 Arial, Helvetica, sans-serif; }
+.ukwn27_cross { color: #ff363c; font-size: 11px; }
+.ukwn27_review_content { margin: 17px 0 0; padding: 0; }
+.ukwn27_review .ukwn27_review_paragraph { margin: 0 0 19px; padding: 0; color: #111; font: 400 20px/1.45 Georgia, 'Times New Roman', serif; letter-spacing: -.25px; text-align: left; }
+.ukwn27_review .ukwn27_inline_link, .ukwn27_review .ukwn27_read_more_link { color: #111; text-decoration: underline; text-decoration-color: #ff363c; text-underline-offset: 4px; font-weight: 700; }
+.ukwn27_review .ukwn27_read_more { margin: 20px 0 30px; padding: 0; font: 700 italic 18px/1.45 Georgia, 'Times New Roman', serif; color: #111; }
+.ukwn27_specs { margin: 0; padding: 0; }
+.ukwn27_review .ukwn27_specs_title { margin: 0 0 10px; padding: 0; font: 400 14px/1.4 'Courier New', monospace; color: #111; }
+.ukwn27_review .ukwn27_specs_table { width: 100%; margin: 0; padding: 0; border: 0; border-collapse: collapse; border-spacing: 0; table-layout: fixed; font: 400 13px/1.4 Arial, Helvetica, sans-serif; color: #303d48; }
+.ukwn27_review .ukwn27_specs_label, .ukwn27_review .ukwn27_specs_value { height: 49px; padding: 14px 16px; border: 2px solid #fff; vertical-align: middle; text-align: left; font: 400 13px/1.4 Arial, Helvetica, sans-serif; color: #303d48; overflow-wrap: anywhere; }
+.ukwn27_review .ukwn27_specs_label { width: 33%; background: #ffe2e2; color: #050505; font-weight: 700; }
+.ukwn27_review .ukwn27_specs_value { background: #fff2f2; }
+.ukwn27_pick_button:hover { background: #d8002f; }
+.ukwn27_review_button:hover { background: #c71929; }
+.ukwn27_picks a:focus-visible, .ukwn27_picks summary:focus-visible, .ukwn27_review a:focus-visible { outline: 3px solid #2369a9; outline-offset: 4px; }
+.ukwn27_demo_gap { display: block; height: 56px; margin: 0; padding: 0; }
+@media (max-width: 660px) {
+ .ukwn27_pick_main { grid-template-columns: 100px minmax(0,1fr); gap: 14px; padding: 24px 0 20px; }
+ .ukwn27_picks .ukwn27_pick_image { width: 100px; height: 68px; }
+ .ukwn27_pick_info { max-width: none; }
+ .ukwn27_pick_offer { grid-column: 1 / -1; }
+ .ukwn27_pick_offer .ukwn27_pick_button { max-width: 280px; margin: 0 auto; }
+ .ukwn27_pick_expanded { gap: 16px; padding: 18px 10px; }
+ .ukwn27_review_hero { grid-template-columns: 1fr; min-height: auto; }
+ .ukwn27_review_media { padding: 24px 24px 10px; }
+ .ukwn27_review .ukwn27_review_image { height: 260px; max-width: 260px; }
+ .ukwn27_review_intro { padding: 16px 22px 30px; }
+ .ukwn27_review_badge { margin-left: 0; margin-bottom: 16px; }
+ .ukwn27_review .ukwn27_review_title { font-size: 23px; }
+ .ukwn27_review_pros, .ukwn27_review_cons { padding: 16px 0 18px 14px; }
+ .ukwn27_review .ukwn27_verdict_item { font-size: 13px; gap: 7px; padding-right: 10px; }
+ .ukwn27_review .ukwn27_review_paragraph { font-size: 18px; line-height: 1.5; }
+ .ukwn27_review .ukwn27_specs_label, .ukwn27_review .ukwn27_specs_value { padding: 12px 10px; font-size: 12px; }
+}
+@media (max-width: 420px) {
+ .ukwn27_picks .ukwn27_picks_title { font-size: 18px; }
+ .ukwn27_review_verdict { grid-template-columns: 1fr; }
+ .ukwn27_review_cons { border-left: 0; border-top: 1px solid #d4d4d4; }
+ .ukwn27_pick_expanded { grid-template-columns: 1fr; }
+}
+
+/* Template addition: show whole product photos */
+.ukwn27_picks .ukwn27_pick_image { object-fit: contain !important; background: #fff; }

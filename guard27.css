@@ -1,0 +1,168 @@
+/* Standalone component. No global body, heading, paragraph or link rules.
+   Set --guard27_sticky_top on .guard27_review if your page has a fixed header.
+   Keep scrolling on the page; ancestor overflow:auto/hidden can affect sticky. */
+.guard27_review {
+  --guard27_sticky_top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 28%) minmax(0, 72%);
+  align-items: start;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid #dedede;
+  background: #fff;
+  color: #222;
+  font: 400 16px/1.3 Georgia, 'Times New Roman', serif;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  overflow: visible;
+}
+.guard27_review, .guard27_review *,
+.guard27_review *::before, .guard27_review *::after { box-sizing: border-box; }
+.guard27_review .guard27_sidebar {
+  position: sticky;
+  top: var(--guard27_sticky_top, 18px);
+  align-self: start;
+  min-width: 0;
+  margin: 0;
+  padding: 34px 8px 20px 12px;
+  border: 0;
+  background: #fff;
+}
+.guard27_summary {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background: #fff;
+  font: 400 14px/1.3 Georgia, 'Times New Roman', serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.guard27_summary .guard27_thumbnail {
+  display: block; width: 100%; max-width: 100%; height: auto;
+  aspect-ratio: 1; object-fit: contain; margin: 0 0 3px; padding: 0;
+  border: 0; border-top: 1px solid #800070; border-radius: 0; background: #f3f3f3;
+}
+.guard27_summary .guard27_brand,
+.guard27_summary .guard27_name,
+.guard27_summary .guard27_price {
+  display: block; margin: 0 0 3px; padding: 0; border: 0;
+  color: #222; font: 400 14px/1.3 Georgia, 'Times New Roman', serif;
+  text-transform: none; letter-spacing: normal;
+}
+.guard27_strong { color: inherit; font-family: inherit; font-weight: 700; }
+.guard27_button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: auto; max-width: 100%; min-height: 34px; margin: 0; padding: 7px 12px;
+  border: 1px solid #800070; border-radius: 999px;
+  background: #800070; color: #fff;
+  font: 700 13px/1.2 Arial, Helvetica, sans-serif;
+  text-align: center; text-decoration: none; text-transform: none;
+  letter-spacing: normal; white-space: normal; box-shadow: none;
+  cursor: pointer;
+}
+.guard27_button:visited { color: #fff; }
+.guard27_button:hover { background: #650058; border-color: #650058; color: #fff; text-decoration: none; }
+.guard27_button:focus-visible { outline: 2px solid #222; outline-offset: 3px; }
+.guard27_button .guard27_arrow { display: block; position: relative; flex: 0 0 18px; width: 18px; height: 18px; }
+.guard27_arrow::before { content: ''; position: absolute; top: 8px; left: 0; width: 17px; height: 1px; background: currentColor; }
+.guard27_arrow::after { content: ''; position: absolute; top: 3px; right: 1px; width: 10px; height: 10px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
+.guard27_summary .guard27_button_sidebar { margin-top: 3px; }
+.guard27_verdict { margin: 16px 0 0; padding: 8px 0 0; border: 0; border-top: 1px solid #ddd; background: #fff; color: #222; font: 400 12px/1.3 Arial, Helvetica, sans-serif; text-align: left; }
+.guard27_verdict .guard27_verdict_item { display: block; margin: 0 0 12px; padding: 0; }
+.guard27_verdict .guard27_verdict_heading { display: block; margin: 0; padding: 0; color: #222; font: 700 12px/1.3 Arial, Helvetica, sans-serif; letter-spacing: normal; text-transform: none; }
+.guard27_verdict .guard27_verdict_text { display: block; margin: 0; padding: 0; color: #222; font: 400 12px/1.3 Arial, Helvetica, sans-serif; }
+.guard27_review .guard27_main { min-width: 0; margin: 0; padding: 0 0 24px 6px; border: 0; border-left: 1px solid #dedede; background: #fff; }
+.guard27_review .guard27_title { display: block; margin: 2px 0 10px; padding: 0; color: #800070; font: 700 24px/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -.4px; text-transform: none; overflow-wrap: anywhere; scroll-margin-top: calc(var(--guard27_sticky_top, 18px) + 12px); }
+.guard27_figure { display: block; margin: 0; padding: 0; background: #fff; color: #777; }
+.guard27_figure .guard27_hero { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; margin: 0; padding: 0; border: 0; border-radius: 0; background: #ededed; }
+.guard27_figure .guard27_caption { display: block; margin: 6px 0 10px; padding: 0; color: #777; font: 400 11px/1.4 Arial, Helvetica, sans-serif; text-align: left; }
+.guard27_review .guard27_button_top { margin-bottom: 10px; }
+.guard27_content { display: block; margin: 0; padding: 0; color: #222; background: #fff; font: 400 16px/1.3 Georgia, 'Times New Roman', serif; text-align: left; overflow-wrap: anywhere; }
+.guard27_content .guard27_paragraph { display: block; margin: 0 0 12px; padding: 0; color: #222; font: 400 16px/1.3 Georgia, 'Times New Roman', serif; }
+.guard27_content .guard27_body_heading { display: block; margin: 0; padding: 0; color: #222; font: 700 16px/1.3 Georgia, 'Times New Roman', serif; text-transform: none; letter-spacing: normal; }
+.guard27_specs { display: block; margin: 0; padding: 0; color: #222; background: #fff; font: 400 16px/1.3 Georgia, 'Times New Roman', serif; text-align: left; overflow-wrap: anywhere; }
+.guard27_specs .guard27_specs_heading { margin: 0 0 5px; padding: 0; color: #222; font: 700 16px/1.3 Georgia, 'Times New Roman', serif; text-transform: none; letter-spacing: normal; }
+.guard27_specs .guard27_spec_row { display: block; margin: 0; padding: 0; color: #222; font: 400 16px/1.3 Georgia, 'Times New Roman', serif; }
+.guard27_specs .guard27_spec_label { display: inline; color: #222; font: 700 16px/1.3 Georgia, 'Times New Roman', serif; }
+.guard27_specs .guard27_spec_value { display: inline; color: #222; font: 400 16px/1.3 Georgia, 'Times New Roman', serif; }
+.guard27_review .guard27_button_bottom { margin-top: 16px; }
+/* Preserve access to the full sidebar on short desktop windows. */
+@media (min-width: 601px) and (max-height: 620px) {
+  .guard27_review .guard27_sidebar { max-height: calc(100dvh - var(--guard27_sticky_top, 18px) - 12px); overflow-y: auto; }
+}
+@media (max-width: 600px) {
+  .guard27_review { grid-template-columns: minmax(0, 1fr); border-left: 0; }
+  .guard27_review .guard27_sidebar { position: static; padding: 16px 0 20px; }
+  .guard27_summary { max-width: 260px; }
+  .guard27_review .guard27_main { border-left: 0; padding-left: 0; }
+  .guard27_review .guard27_title { font-size: 23px; }
+  .guard27_button { min-height: 44px; }
+}
+
+/* At-a-glance list: independent component using the shared button and arrow. */
+.guard27_glance,
+.guard27_glance *,
+.guard27_glance *::before,
+.guard27_glance *::after { box-sizing: border-box; }
+.guard27_glance {
+  display: block; position: relative; width: 100%; max-width: 440px;
+  margin: 0 auto; padding: 37px 10px 22px 9px;
+  border: 0; border-left: 1px solid #ddd;
+  background: #fff; color: #191919;
+  font: 400 18px/24px Georgia, 'Times New Roman', serif;
+  text-align: left; text-transform: none; letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+.guard27_glance::before {
+  content: ''; position: absolute; top: 18px; left: 0;
+  width: 149px; max-width: 50%; height: 1px; background: #ddd;
+}
+.guard27_glance .guard27_glance_title {
+  display: block; margin: 0 0 3px; padding: 0; border: 0;
+  color: #700060; font: 700 30px/1.2 Georgia, 'Times New Roman', serif;
+  letter-spacing: normal; text-transform: none;
+}
+.guard27_glance .guard27_glance_list {
+  display: grid; gap: 15px; margin: 0; padding: 0;
+  list-style: none; border: 0;
+}
+.guard27_glance .guard27_glance_item {
+  display: block; margin: 0; padding: 0; border: 0; list-style: none;
+}
+.guard27_glance_item::before, .guard27_glance_item::after { content: none; }
+.guard27_glance .guard27_glance_description {
+  display: block; position: relative; margin: 0; padding: 0 0 0 19px;
+}
+.guard27_glance_description::before {
+  content: ''; position: absolute; top: 6px; left: 0;
+  width: 12px; height: 12px; border-radius: 50%; background: #ddd;
+}
+.guard27_glance .guard27_glance_tagline {
+  display: block; margin: 0; padding: 0; border: 0;
+  color: #191919; font: 700 18px/24px Georgia, 'Times New Roman', serif;
+  letter-spacing: normal; text-transform: none;
+}
+.guard27_glance .guard27_glance_name {
+  display: block; margin: 0; padding: 0; border: 0;
+  color: #191919; font: 400 18px/24px Georgia, 'Times New Roman', serif;
+  letter-spacing: normal; text-transform: none;
+}
+.guard27_glance .guard27_glance_button {
+  gap: 11px; min-height: 44px; margin: 12px 0 0; padding: 8px 11px;
+  font: 700 18px/26px Arial, Helvetica, sans-serif;
+  vertical-align: top;
+}
+.guard27_glance_button .guard27_arrow { flex-basis: 22px; width: 22px; height: 24px; }
+.guard27_glance_button .guard27_arrow::before { top: 11px; width: 21px; height: 2px; }
+.guard27_glance_button .guard27_arrow::after {
+  top: 4px; right: 2px; width: 14px; height: 14px;
+  border-top-width: 2px; border-right-width: 2px;
+}
+
+/* Template addition: show whole product photos */
+.guard27_figure .guard27_hero { object-fit: contain !important; background: #fff !important; }

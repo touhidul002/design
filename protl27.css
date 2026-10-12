@@ -1,0 +1,38 @@
+/* Independent, namespaced blog sections. No global element rules. */
+.protl27_picks,.protl27_review{box-sizing:border-box;width:100%;margin:0 auto;color:#101010;background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;line-height:1.6;text-align:left;letter-spacing:normal}
+.protl27_picks *,.protl27_review *{box-sizing:border-box}
+.protl27_picks{max-width:690px;border:1px solid #f5b89b;padding:0 16px 15px}
+.protl27_picks .protl27_section_title{margin:0 0 12px;font-family:'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;font-stretch:condensed;font-size:26px;font-weight:800;line-height:1.5;color:#080808}
+.protl27_picks .protl27_pick_list,.protl27_picks .protl27_more_list{margin:0;padding:0 0 0 28px;list-style:disc outside}
+.protl27_picks .protl27_pick_item{margin:0;padding:0;line-height:20.5px}
+.protl27_picks .protl27_pick_name{display:inline;margin:0;padding:0;color:#111;font:700 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_picks .protl27_link{color:#e94e00;text-decoration:none;font:inherit;box-shadow:none;background:none}
+.protl27_picks .protl27_jump{display:block;color:#e94e00;text-decoration:none;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_picks .protl27_more_title{margin:14px 0 12px;color:#080808;font:800 19px/1.5 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif}
+.protl27_picks .protl27_more_list li{padding:0;margin:0;line-height:20.5px}
+.protl27_picks a:hover{text-decoration:underline}
+.protl27_review{max-width:670px;padding:8px 7px 0; margin:0 auto 34px;scroll-margin-top:24px}
+.protl27_review .protl27_top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
+.protl27_review .protl27_image{display:block;width:100%;height:auto;aspect-ratio:315/238;object-fit:cover;border:0;border-radius:0;background:#ededed;margin:0;padding:0}
+.protl27_review .protl27_product_title{margin:0 0 12px;padding:0;color:#f37024;font:700 19px/1.3 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;scroll-margin-top:24px}
+.protl27_review .protl27_features{margin:0 0 16px;padding:0 0 0 28px;list-style:disc outside;color:#111;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_review .protl27_features li,.protl27_review .protl27_points li{padding:0;margin:0}
+.protl27_review .protl27_cta{display:inline-flex;align-items:center;justify-content:center;background:#d9272b;color:#fff;border:0;border-radius:24px;padding:8px 20px;text-decoration:none;font:700 16px/22px Arial,Helvetica,sans-serif;min-height:39px;max-width:100%;box-shadow:none;text-align:center}
+.protl27_review .protl27_cta:hover{background:#b91e23}
+.protl27_review .protl27_balance{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;margin:29px 0 15px}
+.protl27_review .protl27_subtitle{margin:0 0 14px;padding:0;color:#090909;font:800 19px/1.4 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;text-transform:uppercase}
+.protl27_review .protl27_points{margin:0;padding:0 0 0 28px;list-style:disc outside;color:#111;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_review .protl27_content{margin:0;padding:0;color:#111;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_review .protl27_paragraph{margin:0 0 16px;padding:0;color:#111;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_review .protl27_specs{border-collapse:collapse;table-layout:fixed;width:100%;margin:0 0 18px;border:1px solid #202020;color:#111;font:400 13px/20.5px Arial,Helvetica,sans-serif}
+.protl27_review .protl27_specs th,.protl27_review .protl27_specs td{width:50%;border:1px solid #202020;padding:4px 3px;vertical-align:middle;overflow-wrap:anywhere;background:transparent;font:inherit}
+.protl27_review .protl27_specs th{text-align:left;font-weight:700}
+.protl27_review .protl27_specs td{text-align:center}
+.protl27_review .protl27_specs tr:nth-child(odd){background:#eee}
+.protl27_review .protl27_specs tr:nth-child(even){background:#fff}
+.protl27_review .protl27_sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.protl27_picks a:focus-visible,.protl27_review a:focus-visible{outline:3px solid #165ca0;outline-offset:3px}
+@media(max-width:520px){.protl27_picks{padding:8px 14px 16px}.protl27_picks .protl27_section_title{font-size:23px;line-height:1.25}.protl27_review{padding:8px 10px 0}.protl27_review .protl27_top,.protl27_review .protl27_balance{grid-template-columns:1fr;gap:20px}.protl27_review .protl27_balance{margin-top:24px}.protl27_review .protl27_product_title{font-size:21px}.protl27_review .protl27_subtitle{margin-bottom:10px}}
+
+/* Template addition: show whole product photos */
+.protl27_review .protl27_image { object-fit: contain !important; background: #fff; }

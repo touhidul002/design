@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Roboto:wght@400;500;700&display=swap");
+/* ===== bobvl27 : shared reset for both sections ===== */
+.bobvl27_glance, .bobvl27_glance *, .bobvl27_review, .bobvl27_review * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION 1 : AT A GLANCE (3 short picks)
+   ========================================================= */
+.bobvl27_glance {
+  --bobvl27_navy: #05304a;
+  --bobvl27_fold: #6b8499;
+  --bobvl27_green: #3b7a1e;
+  --bobvl27_bg: #f4f0ea;
+  --bobvl27_ink: #1f1f1f;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 20px 20px;
+  background: var(--bobvl27_bg);
+  text-align: center;
+}
+.bobvl27_glance_grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: center;
+}
+.bobvl27_glance_card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  padding: 14px 13px 13px;
+  background: #fff;
+  border-radius: 6px;
+  text-align: center;
+}
+.bobvl27_glance_badge {
+  position: absolute;
+  left: -4px;
+  top: -25px;
+  display: inline-block;
+  margin: 0;
+  padding: 0 20px;
+  max-width: calc(100% + 4px);
+  height: 33px;
+  line-height: 33px;
+  background: var(--bobvl27_navy);
+  color: #fff;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: nowrap;
+  border-radius: 3px 3px 3px 0;
+}
+.bobvl27_glance_badge::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-top: 13px solid var(--bobvl27_fold);
+  border-right: 18px solid transparent;
+}
+.bobvl27_glance_img_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+  margin: 10px 0 20px;
+}
+.bobvl27_glance_img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #f1f1f1;
+}
+.bobvl27_glance_name {
+  margin: 0 0 18px;
+  padding: 0;
+  min-height: 81px;
+  color: var(--bobvl27_ink);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: center;
+}
+.bobvl27_glance_btn_wrap {
+  margin-top: auto;
+}
+.bobvl27_glance_btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+  height: 52px;
+  line-height: 52px;
+  background: var(--bobvl27_green);
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.bobvl27_glance_btn:hover,
+.bobvl27_glance_btn:focus {
+  background: #2f6216;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =========================================================
+   SECTION 2 : SINGLE PRODUCT REVIEW
+   ========================================================= */
+.bobvl27_review {
+  --bobvl27_navy: #05304a;
+  --bobvl27_green: #3b7a1e;
+  --bobvl27_plus: #1a8f1a;
+  --bobvl27_minus: #e0202a;
+  --bobvl27_ink: #222;
+  --bobvl27_panel: #f7f7f7;
+  position: relative;
+  width: 100%;
+  max-width: 730px;
+  margin: 40px auto;
+  padding: 0;
+  background: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--bobvl27_ink);
+  text-align: center;
+}
+.bobvl27_review_badge {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 36px;
+  line-height: 36px;
+  background: var(--bobvl27_navy);
+  color: #fff;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 0 0 6px 6px;
+}
+.bobvl27_review_top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0 0;
+  background: #fff;
+  text-align: left;
+}
+.bobvl27_review_media {
+  flex: 0 0 47%;
+  max-width: 47%;
+  text-align: center;
+}
+.bobvl27_review_img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #f1f1f1;
+}
+.bobvl27_review_credit {
+  display: inline-block;
+  margin: 8px 0 12px;
+  padding: 0 0 2px;
+  color: var(--bobvl27_ink);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+  border-bottom: 2px solid var(--bobvl27_green);
+}
+.bobvl27_review_info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.bobvl27_review_title {
+  margin: 0 0 22px;
+  padding: 0;
+  color: var(--bobvl27_ink);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+}
+.bobvl27_review_btn {
+  display: block;
+  width: 100%;
+  max-width: 338px;
+  margin: 0;
+  padding: 0 10px;
+  height: 52px;
+  line-height: 52px;
+  background: var(--bobvl27_green);
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.bobvl27_review_btn:hover,
+.bobvl27_review_btn:focus {
+  background: #2f6216;
+  color: #fff;
+  text-decoration: none;
+}
+.bobvl27_review_panel {
+  padding: 34px 0 30px;
+  background: var(--bobvl27_panel);
+  text-align: left;
+}
+.bobvl27_review_pc {
+  display: flex;
+  gap: 30px;
+  padding: 0 0 26px;
+  border-bottom: 1px solid #ddd;
+}
+.bobvl27_review_col {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+.bobvl27_review_h4 {
+  margin: 0 0 12px;
+  padding: 0;
+  color: var(--bobvl27_ink);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+}
+.bobvl27_review_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bobvl27_review_list_item {
+  position: relative;
+  margin: 0 0 11px;
+  padding: 0 0 0 20px;
+  color: var(--bobvl27_ink);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+}
+.bobvl27_review_list_item::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+}
+.bobvl27_review_pros .bobvl27_review_list_item::before {
+  content: "+";
+  color: var(--bobvl27_plus);
+}
+.bobvl27_review_cons .bobvl27_review_list_item::before {
+  content: "\2212";
+  color: var(--bobvl27_minus);
+}
+.bobvl27_review_specs {
+  padding: 26px 0 0;
+}
+.bobvl27_review_spec_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bobvl27_review_spec_row {
+  position: relative;
+  margin: 0 0 6px;
+  padding: 0 0 0 25px;
+  color: var(--bobvl27_ink);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: left;
+}
+.bobvl27_review_spec_row::before {
+  content: "\2022";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: #555;
+  font-size: 12px;
+}
+.bobvl27_review_spec_label {
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+  .bobvl27_glance_badge { font-size: 14px; padding: 0 14px; }
+  .bobvl27_glance_name { font-size: 15px; line-height: 23px; min-height: 69px; }
+  .bobvl27_glance_img_wrap { height: 180px; }
+}
+@media (max-width: 680px) {
+  .bobvl27_glance { padding: 30px 16px 10px; }
+  .bobvl27_glance_grid { flex-direction: column; gap: 32px; }
+  .bobvl27_glance_card { flex: 0 0 auto; width: 100%; max-width: 420px; margin: 25px auto 0; }
+  .bobvl27_glance_badge { font-size: 16px; }
+  .bobvl27_glance_name { min-height: 0; font-size: 17px; line-height: 26px; }
+  .bobvl27_glance_img_wrap { height: 220px; }
+  .bobvl27_glance_btn_wrap { margin-top: 18px; }
+
+  .bobvl27_review { margin: 24px auto; }
+  .bobvl27_review_top { flex-direction: column; align-items: stretch; gap: 6px; padding: 10px 16px 20px; }
+  .bobvl27_review_media { flex: 0 0 auto; max-width: 100%; }
+  .bobvl27_review_title { font-size: 22px; text-align: left; margin-bottom: 18px; }
+  .bobvl27_review_btn { max-width: 100%; }
+  .bobvl27_review_panel { padding: 28px 16px 24px; }
+  .bobvl27_review_pc { flex-direction: column; gap: 22px; }
+}
+
+/* Review text block added by bobvl27_review_template.py */
+.bobvl27_review .bobvl27_review_body { text-align: left; margin: 0 0 22px; }
+.bobvl27_review .bobvl27_review_body p { margin: 0 0 14px; line-height: 1.65; }

@@ -1,0 +1,83 @@
+/* Independent, centered sections. All styling is scoped to pcmg27. */
+.pcmg27_picks,.pcmg27_review{box-sizing:border-box;width:100%;max-width:768px;margin:0 auto;color:#272727;background:#fff;font:16px/1.5 Arial,Helvetica,sans-serif;text-align:left;isolation:isolate}
+.pcmg27_picks *,.pcmg27_review *{box-sizing:border-box}
+.pcmg27_picks :where(h2,h3,h4,p,figure,ul),.pcmg27_review :where(h2,h3,h4,p,figure,ul){margin:0;padding:0;color:inherit;font-family:inherit}
+.pcmg27_picks a,.pcmg27_review a{font-family:inherit}
+.pcmg27_picks a:focus-visible,.pcmg27_review a:focus-visible,.pcmg27_picks summary:focus-visible,.pcmg27_review summary:focus-visible{outline:3px solid #174b94;outline-offset:4px}
+.pcmg27_picks .pcmg27_sectiontitle{position:relative;margin:14px 0 32px;padding:0 0 4px;border-bottom:1px solid #d5d5d5;font:700 22px/1.4 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;letter-spacing:1.7px}
+.pcmg27_sectiontitle:after{position:absolute;bottom:-3px;left:0;width:65px;height:6px;background:#171717;content:''}
+.pcmg27_picktop{display:grid;grid-template-columns:140px minmax(0,1fr) 280px;gap:18px;align-items:start}
+.pcmg27_thumb{display:block;width:140px;height:80px;object-fit:cover;border:1px solid #d6d6d6}
+.pcmg27_pickname{padding-top:3px}
+.pcmg27_picks .pcmg27_tag{color:#f00035;font-size:15px;font-weight:700;line-height:20px;margin-bottom:4px;max-width:250px}
+.pcmg27_picks .pcmg27_name{font-size:18px;line-height:24px;font-weight:700}
+.pcmg27_picks .pcmg27_price{font-size:13px;line-height:20px;text-align:center;margin-bottom:8px}
+.pcmg27_btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 24px;border:0;border-radius:7px;background:#f00035;box-shadow:2px 3px 0 #8e1230;color:#fff!important;font-size:15px;font-weight:700;line-height:22px;text-decoration:none;text-align:center}
+.pcmg27_btn:hover{background:#ce002d}
+.pcmg27_offer .pcmg27_btn{width:100%}
+.pcmg27_pickdetails{display:flex;flex-direction:column;margin:0 0 24px}
+.pcmg27_pickdetails::details-content{display:contents}
+.pcmg27_pickdetails:not([open])>.pcmg27_pickbody{display:none}
+.pcmg27_toggle{order:2;display:flex;align-items:center;justify-content:center;gap:10px;position:relative;list-style:none;font-size:13px;font-weight:700;line-height:20px;cursor:pointer;margin:26px 0 0;white-space:nowrap}
+.pcmg27_toggle:before,.pcmg27_toggle:after{content:'';flex:1;border-top:1px solid #d5d5d5}
+.pcmg27_toggle:before{margin-right:6px}.pcmg27_toggle:after{margin-left:6px}
+.pcmg27_chevron{display:inline-block;width:14px;height:14px;border:solid #454545;border-width:0 2px 2px 0;transform:rotate(45deg);flex-shrink:0;margin:-7px 3px 0}
+.pcmg27_hide{display:none}
+.pcmg27_pickdetails[open]>.pcmg27_toggle .pcmg27_expand{display:none}
+.pcmg27_pickdetails[open]>.pcmg27_toggle .pcmg27_hide{display:inline}
+.pcmg27_pickdetails[open]>.pcmg27_toggle .pcmg27_chevron,.pcmg27_accordion[open]>.pcmg27_summary .pcmg27_chevron{transform:rotate(225deg);border-color:#f00035;margin-top:6px}
+.pcmg27_pickbody{padding-top:26px;order:1}
+.pcmg27_picks .pcmg27_smallheading{font:700 17px/24px 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;margin:0 0 12px}
+.pcmg27_rating{display:flex;gap:8px;align-items:center;color:#f00035;font-size:15px;font-weight:700;line-height:24px}
+.pcmg27_dots{font-size:25px;letter-spacing:1px;white-space:nowrap;line-height:24px}
+.pcmg27_picks .pcmg27_text,.pcmg27_review .pcmg27_text{font-size:14px;font-weight:400;line-height:22px;margin:14px 0}
+.pcmg27_picks .pcmg27_text{font-size:15px;line-height:24px;margin:16px 0}
+.pcmg27_links{display:flex;justify-content:space-between;gap:16px;margin:14px 0;font-size:15px;line-height:22px;font-weight:700}
+.pcmg27_jump{color:#292929;text-decoration:none}
+.pcmg27_link{color:#ef0034;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.pcmg27_procon{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.pcmg27_pickbody .pcmg27_procon{padding:28px;background:#fff9fb;border-radius:8px}
+.pcmg27_picks .pcmg27_list,.pcmg27_review .pcmg27_list{list-style:none;margin:0;padding:0}
+.pcmg27_item{position:relative;padding-left:26px;margin-bottom:13px;font-size:15px;line-height:23px;font-weight:700}
+.pcmg27_item:last-child{margin-bottom:0}
+.pcmg27_item:before{position:absolute;left:0;top:-1px;content:'+';font-size:26px;line-height:22px;font-weight:400;color:#555}
+.pcmg27_cons .pcmg27_item:before{content:'\2212 '}
+.pcmg27_review{border:1px solid #ebebeb;border-radius:6px;padding:32px}
+.pcmg27_reviewtop{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:32px}
+.pcmg27_figure{min-width:0}
+.pcmg27_zoomlink{display:block;position:relative}
+.pcmg27_hero{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid #d6d6d6}
+.pcmg27_zoomicon{position:absolute;top:13px;right:13px;width:28px;height:28px;background:#fffffff0;border-radius:7px;text-align:center;font-size:27px;line-height:25px;color:#444}
+.pcmg27_zoomicon span{position:absolute;left:8px;top:1px;font-size:12px}
+.pcmg27_review .pcmg27_credit{font-size:14px;line-height:20px;margin-top:12px}
+.pcmg27_review .pcmg27_tag{font-size:18px;line-height:24px;color:#f00035;font-weight:700;margin-bottom:8px}
+.pcmg27_review .pcmg27_producttitle{font:700 30px/1.16 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;margin-bottom:10px;scroll-margin-top:20px}
+.pcmg27_awardrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pcmg27_award{display:block;background:#f00035;color:#fff;clip-path:polygon(0 0,88% 0,100% 50%,88% 100%,0 100%);padding:4px 16px 4px 7px;font-size:10px;font-weight:800;letter-spacing:1px;line-height:11px}
+.pcmg27_accordion{border-top:1px solid #d5d5d5}
+.pcmg27_summary{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:26px 0}
+.pcmg27_summary::-webkit-details-marker,.pcmg27_toggle::-webkit-details-marker{display:none}
+.pcmg27_review .pcmg27_accordiontitle{font:700 24px/32px 'Arial Narrow','Liberation Sans Narrow',Arial,sans-serif}
+.pcmg27_accordion>.pcmg27_procon{padding:0 0 34px}
+.pcmg27_review .pcmg27_item{font-size:16px;line-height:24px;padding-left:29px;margin-bottom:13px}
+.pcmg27_review .pcmg27_pros .pcmg27_item:before{color:#2cbd44}.pcmg27_review .pcmg27_cons .pcmg27_item:before{color:#f00035}
+.pcmg27_content,.pcmg27_specs{padding-bottom:24px}
+.pcmg27_specrow{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:12px 0;border-bottom:1px solid #eee;font-size:14px;line-height:22px}
+.pcmg27_label{font-weight:700}
+.pcmg27_buy{border-top:1px solid #d5d5d5;text-align:center;padding:32px 0 34px}
+.pcmg27_review .pcmg27_caption{font-size:12px;line-height:18px;color:#858585;font-weight:700;margin-bottom:17px}
+.pcmg27_buy .pcmg27_btn{width:258px;max-width:100%}
+.pcmg27_learn{border-top:1px solid #d5d5d5;text-align:center;padding:32px 0 36px}
+.pcmg27_learn .pcmg27_link{font-size:18px;line-height:26px}
+.pcmg27_lightbox{display:none;position:fixed;inset:0;z-index:2147483647;align-items:center;justify-content:center;padding:16px}
+.pcmg27_lightbox:target{display:flex}
+.pcmg27_backdrop{position:absolute;inset:0;background:#000c}
+.pcmg27_zoomframe{position:relative;width:800px;height:800px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);background:#fff}
+.pcmg27_zoomimage{display:block;width:100%;height:100%;object-fit:contain}
+.pcmg27_close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:#222;font:32px/1 Arial;text-decoration:none;box-shadow:0 1px 6px #0003}
+@media(max-width:640px){.pcmg27_picks{padding:0 12px}.pcmg27_picktop{grid-template-columns:100px minmax(0,1fr);gap:12px}.pcmg27_thumb{width:100px;height:62px}.pcmg27_offer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px}.pcmg27_offer .pcmg27_btn{width:180px;max-width:60%}.pcmg27_picks .pcmg27_price{margin:0}.pcmg27_procon{grid-template-columns:1fr;gap:24px}.pcmg27_links{flex-wrap:wrap}.pcmg27_review{padding:20px}.pcmg27_reviewtop{grid-template-columns:1fr;gap:24px;margin-bottom:24px}.pcmg27_review .pcmg27_producttitle{font-size:28px}.pcmg27_summary{padding:22px 0}.pcmg27_review .pcmg27_accordiontitle{font-size:22px}.pcmg27_pickbody .pcmg27_procon{padding:20px}.pcmg27_toggle{font-size:11px;gap:6px}}
+
+.pcmg27_topbuy{margin-top:16px}
+
+/* Template addition: show whole product photos */
+.pcmg27_picks .pcmg27_thumb, .pcmg27_review .pcmg27_hero { object-fit: contain !important; background: #fff; }

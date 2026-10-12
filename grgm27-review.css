@@ -1,0 +1,431 @@
+/* All styles belong to grgm27 components; no body, global heading, or link rules. */
+.grgm27_review-section,
+.grgm27_review-card,
+.grgm27_specifications,
+.grgm27_purchase-footer {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #080322;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  letter-spacing: normal;
+}
+.grgm27_review-section { padding: 0; }
+.grgm27_review-card *,
+.grgm27_specifications *,
+.grgm27_purchase-footer * {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.grgm27_review-card {
+  overflow: hidden;
+  border: 1.5px solid #434155;
+  border-radius: 12px;
+  background: #fff;
+}
+.grgm27_review-card .grgm27_card-main {
+  padding: 30px 32px 36px;
+}
+.grgm27_review-card .grgm27_badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background: #2b2b4c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.grgm27_review-card .grgm27_product-title {
+  margin: 16px 0 24px;
+  padding: 0;
+  border: 0;
+  color: #080322;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  scroll-margin-top: 24px;
+}
+.grgm27_review-card .grgm27_product-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  align-items: start;
+  gap: 36px;
+}
+.grgm27_review-card .grgm27_image-wrap {
+  min-width: 0;
+  padding: 0;
+}
+.grgm27_review-card .grgm27_product-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+}
+.grgm27_review-card .grgm27_product-info { min-width: 0; }
+.grgm27_review-card .grgm27_rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.grgm27_review-card .grgm27_rating-value { font-weight: 700; }
+.grgm27_review-card .grgm27_stars {
+  display: inline-flex;
+  color: #ffc36f;
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.grgm27_review-card .grgm27_half-star {
+  color: transparent;
+  background: linear-gradient(90deg, #ffc36f 50%, #ffedd6 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.grgm27_review-card .grgm27_cta-button,
+.grgm27_purchase-footer .grgm27_cta-button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: #e8241d;
+  box-shadow: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.grgm27_review-card .grgm27_cta-button:hover,
+.grgm27_purchase-footer .grgm27_cta-button:hover { background: #c91d17; color: #fff; }
+.grgm27_review-card .grgm27_cta-button:focus-visible,
+.grgm27_purchase-footer .grgm27_cta-button:focus-visible,
+.grgm27_review-card .grgm27_panel-toggle:focus-visible { outline: 3px solid #ffbc60; outline-offset: -3px; }
+.grgm27_review-card .grgm27_highlights-title {
+  margin: 22px 0 12px;
+  padding: 0;
+  color: #080322;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: none;
+}
+.grgm27_review-card .grgm27_features {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: disc outside;
+  color: #17122c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.grgm27_review-card .grgm27_feature { display: list-item; margin: 0 0 8px; padding: 0 0 0 2px; }
+.grgm27_review-card .grgm27_feature:last-child { margin-bottom: 0; }
+
+/* Collapsible Panels */
+.grgm27_review-card .grgm27_pros-cons,
+.grgm27_review-card .grgm27_bottom-line {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.grgm27_review-card .grgm27_panel-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  background: #414053;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+.grgm27_review-card .grgm27_bottom-line-toggle {
+  background: #080020;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.grgm27_review-card .grgm27_panel-toggle::-webkit-details-marker { display: none; }
+.grgm27_review-card .grgm27_panel-toggle::marker { content: ""; }
+.grgm27_review-card .grgm27_chevron {
+  display: block;
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-right: 2.5px solid currentColor;
+  border-bottom: 2.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+.grgm27_review-card .grgm27_pros-cons[open] > .grgm27_panel-toggle .grgm27_chevron,
+.grgm27_review-card .grgm27_bottom-line[open] > .grgm27_panel-toggle .grgm27_chevron {
+  transform: translateY(-2px) rotate(45deg);
+}
+
+/* Pros and Cons content */
+.grgm27_review-card .grgm27_pros-cons-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  padding: 24px 32px 28px;
+  background: #fff;
+}
+.grgm27_review-card .grgm27_list-heading {
+  margin: 0 0 16px;
+  padding: 0;
+  color: #080322;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: none;
+}
+.grgm27_review-card .grgm27_advantages,
+.grgm27_review-card .grgm27_disadvantages { display: block; margin: 0; padding: 0; list-style: none; }
+.grgm27_review-card .grgm27_advantage,
+.grgm27_review-card .grgm27_disadvantage {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin: 0 0 12px;
+  padding: 0;
+  color: #17122c;
+  font-size: 14px;
+  line-height: 1.5;
+  list-style: none;
+}
+.grgm27_review-card .grgm27_advantage:last-child,
+.grgm27_review-card .grgm27_disadvantage:last-child { margin-bottom: 0; }
+.grgm27_review-card .grgm27_check {
+  color: #29b34b;
+  font-size: 17px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 700;
+}
+.grgm27_review-card .grgm27_cross {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin: 2px auto 0;
+}
+.grgm27_review-card .grgm27_cross::before,
+.grgm27_review-card .grgm27_cross::after {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  width: 15px;
+  height: 2px;
+  background: #fa3f58;
+  content: "";
+  transform: rotate(45deg);
+}
+.grgm27_review-card .grgm27_cross::after { transform: rotate(-45deg); }
+
+/* Bottom Line Content */
+.grgm27_review-card .grgm27_bottom-line-title {
+  margin: 0;
+  padding: 16px 28px;
+  background: #080020;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: none;
+}
+.grgm27_review-card .grgm27_content {
+  padding: 18px 28px 22px;
+  background: #fff;
+  border-top: 1px solid #ededf2;
+}
+.grgm27_review-card .grgm27_paragraph {
+  margin: 0;
+  padding: 0;
+  color: #17122c;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Specifications Table */
+.grgm27_specifications {
+  margin: 26px auto 0;
+  background: #fff;
+}
+.grgm27_specifications .grgm27_visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.grgm27_specifications .grgm27_table-frame {
+  overflow: hidden;
+  border: 1.5px solid #434155;
+  border-radius: 8px;
+}
+.grgm27_specifications .grgm27_specs-table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #080322;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+.grgm27_specifications .grgm27_specs-body { display: table-row-group; }
+.grgm27_specifications .grgm27_spec-row { display: table-row; background: #fff; }
+.grgm27_specifications .grgm27_spec-label,
+.grgm27_specifications .grgm27_spec-value {
+  display: table-cell;
+  padding: 11px 16px;
+  border: 0;
+  border-bottom: 1px solid #434155;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+.grgm27_specifications .grgm27_spec-label {
+  width: 22%;
+  border-right: 1.5px solid #434155;
+  background: #2d2c41;
+  color: #fff;
+  font-weight: 700;
+}
+.grgm27_specifications .grgm27_spec-value {
+  background: #fff;
+  color: #080322;
+  font-weight: 400;
+}
+.grgm27_specifications .grgm27_spec-row:last-child .grgm27_spec-label,
+.grgm27_specifications .grgm27_spec-row:last-child .grgm27_spec-value {
+  border-bottom: 0;
+}
+
+/* Purchase Footer */
+.grgm27_purchase-footer {
+  padding: 22px 0 0;
+  text-align: center;
+}
+.grgm27_purchase-footer .grgm27_cta-button {
+  display: inline-block;
+  width: auto;
+  min-width: 240px;
+  max-width: 100%;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .grgm27_review-card .grgm27_card-main { padding: 22px 20px 28px; }
+  .grgm27_review-card .grgm27_badge { padding: 4px 10px; font-size: 11px; }
+  .grgm27_review-card .grgm27_product-title { margin: 14px 0 18px; font-size: 22px; }
+  .grgm27_review-card .grgm27_product-grid { gap: 26px; }
+  .grgm27_review-card .grgm27_rating { gap: 6px 12px; font-size: 14px; }
+  .grgm27_review-card .grgm27_stars { font-size: 17px; }
+  .grgm27_review-card .grgm27_highlights-title { font-size: 15px; margin: 18px 0 10px; }
+  .grgm27_review-card .grgm27_features { font-size: 13.5px; }
+  .grgm27_review-card .grgm27_cta-button,
+  .grgm27_purchase-footer .grgm27_cta-button { font-size: 14px; padding: 11px 18px; }
+  .grgm27_review-card .grgm27_panel-toggle,
+  .grgm27_review-card .grgm27_bottom-line-title { padding: 14px 20px; font-size: 16px; }
+  .grgm27_review-card .grgm27_pros-cons-grid { padding: 20px 22px 24px; gap: 24px; }
+  .grgm27_review-card .grgm27_list-heading { font-size: 15px; margin-bottom: 12px; }
+  .grgm27_review-card .grgm27_advantage,
+  .grgm27_review-card .grgm27_disadvantage { grid-template-columns: 18px minmax(0, 1fr); gap: 10px; font-size: 13.5px; margin-bottom: 10px; }
+  .grgm27_review-card .grgm27_check { font-size: 15px; }
+  .grgm27_review-card .grgm27_cross { width: 13px; height: 13px; }
+  .grgm27_review-card .grgm27_cross::before,
+  .grgm27_review-card .grgm27_cross::after { width: 13px; top: 5px; }
+  .grgm27_review-card .grgm27_content { padding: 16px 20px; }
+  .grgm27_review-card .grgm27_paragraph { font-size: 13.5px; }
+  .grgm27_specifications .grgm27_spec-label,
+  .grgm27_specifications .grgm27_spec-value { padding: 9px 12px; font-size: 13.5px; }
+  .grgm27_specifications .grgm27_spec-label { width: 26%; }
+}
+
+@media (max-width: 680px) {
+  .grgm27_review-card { border-radius: 8px; }
+  .grgm27_review-card .grgm27_card-main { padding: 18px 16px 22px; }
+  .grgm27_review-card .grgm27_badge { font-size: 11px; padding: 4px 8px; }
+  .grgm27_review-card .grgm27_product-title { margin: 12px 0 16px; font-size: 20px; }
+  .grgm27_review-card .grgm27_product-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .grgm27_review-card .grgm27_product-image { max-width: 300px; }
+  .grgm27_review-card .grgm27_rating { margin-bottom: 14px; font-size: 13.5px; }
+  .grgm27_review-card .grgm27_stars { font-size: 16px; }
+  .grgm27_review-card .grgm27_cta-button,
+  .grgm27_purchase-footer .grgm27_cta-button { padding: 10px 16px; font-size: 14px; }
+  .grgm27_review-card .grgm27_highlights-title { margin: 18px 0 8px; font-size: 14.5px; }
+  .grgm27_review-card .grgm27_features { padding-left: 18px; font-size: 13px; }
+  .grgm27_review-card .grgm27_feature { margin-bottom: 6px; }
+  .grgm27_review-card .grgm27_panel-toggle,
+  .grgm27_review-card .grgm27_bottom-line-title { padding: 12px 16px; font-size: 15px; }
+  .grgm27_review-card .grgm27_chevron { flex-basis: 8px; width: 8px; height: 8px; border-width: 2px; }
+  .grgm27_review-card .grgm27_pros-cons-grid { grid-template-columns: minmax(0, 1fr); padding: 16px 16px 18px; gap: 18px; }
+  .grgm27_review-card .grgm27_list-heading { margin-bottom: 10px; font-size: 14.5px; }
+  .grgm27_review-card .grgm27_advantage,
+  .grgm27_review-card .grgm27_disadvantage { gap: 8px; margin-bottom: 8px; font-size: 13px; }
+  .grgm27_review-card .grgm27_check { font-size: 14px; }
+  .grgm27_review-card .grgm27_content { padding: 14px 16px; }
+  .grgm27_review-card .grgm27_paragraph { font-size: 13px; }
+  .grgm27_specifications { margin-top: 18px; }
+  .grgm27_specifications .grgm27_spec-label,
+  .grgm27_specifications .grgm27_spec-value { padding: 8px 10px; font-size: 12.5px; line-height: 1.45; }
+  .grgm27_specifications .grgm27_spec-label { width: 32%; }
+  .grgm27_purchase-footer { padding-top: 18px; }
+}
+
+@media (max-width: 360px) {
+  .grgm27_review-card .grgm27_card-main { padding-right: 12px; padding-left: 12px; }
+  .grgm27_review-card .grgm27_product-title { font-size: 18px; }
+  .grgm27_specifications .grgm27_spec-label,
+  .grgm27_specifications .grgm27_spec-value { padding: 7px 8px; font-size: 12px; }
+}
